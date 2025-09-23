@@ -11,13 +11,13 @@ const About = () => {
   return (
     <div id="About" className="mt-52 px-6 scroll-mt-50 ">
       <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
-        <h1 className="text-5xl md:text-5xl font-bold mb-8 dark:text-blue-400">A Few Words About Me</h1>
+        <h1 className="text-5xl font-bold mb-8 dark:text-blue-400">A Few Words About Me</h1>
 
-        <p className="text-m text-gray-700 md:text-[1.1rem] mb-6 md:w-140 dark:text-gray-200">
+        <p className="text-base text-gray-700 md:text-[1.1rem] mb-6 max-w-full md:max-w-xl dark:text-gray-200">
           I'm a Computer Science student based in London, passionate about software development and learning new technologies.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-6 text-l md:text-[1.1rem] md:w-160">
+        <div className="flex flex-wrap justify-center gap-4 mb-6 text-lg md:text-[1.1rem] max-w-full md:max-w-2xl">
           <span className="flex items-center gap-2">
             <span>•</span>
             <span className="font-semibold">I'm good at:</span>
@@ -32,7 +32,7 @@ const About = () => {
           ))}
         </div>
 
-        <p className="text-lg md:text-l mb-6 md:w-185 text-gray-500 mt-5 dark:text-gray-100">
+        <p className="text-lg mb-6 max-w-full md:max-w-4xl text-gray-500 mt-5 dark:text-gray-100">
         I specialise in software engineering, machine learning and web development, with a strong foundation in computer science fundamentals. 
         I enjoy solving complex problems, building efficient applications, and collaborating on innovative projects. 
         If you're looking for a passionate developer eager to learn and grow, let's connect!

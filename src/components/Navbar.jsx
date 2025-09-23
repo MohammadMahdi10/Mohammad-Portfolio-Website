@@ -15,14 +15,21 @@ const Navbar = ({theme, setTheme, contactFormOpen, openContactForm, closeContact
     <div className='flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-20 py-4 sticky top-0 z-50 backdrop-blur-x1 font-medium 
     bg-white dark:bg-gray-900'>
 
-      <h1 className="w-40 sm:w-40 whitespace-nowrap text-2xl font-medium text-black dark:text-white"><a href="#Home">Mohammad Sabur Ali Mahdi</a></h1>
+      <h1 className="max-w-[200px] sm:max-w-none truncate sm:whitespace-nowrap text-lg sm:text-2xl font-medium text-black dark:text-white">
+        <a href="#Home">Mohammad Sabur Ali Mahdi</a>
+      </h1>
+
 
       {/* Navbar For Mobile & Desktop */}
-      <div className={`text-gray-700 dark:text-white sm:text-sm 
-        ${sidebarOpen ? 'max-sm:w-60 max-sm:pl-10' : 'max-sm:w-0 overflow-hidden'}
-        max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col 
-        max-sm:bg-gray-800 max-sm:shadow-2xl max-sm:shadow-black/90 max-sm:text-white max-sm:pt-20
-        flex sm:items-center gap-5 ml-25 transition-all duration-500 ease-in-out`}>
+      <div
+        className={`text-gray-700 dark:text-white sm:text-sm md:mr-30
+          ${sidebarOpen ? 'max-sm:w-50 max-sm:pl-6' : 'max-sm:w-0 overflow-hidden'}
+          max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full
+          max-sm:flex-col max-sm:bg-gray-800 max-sm:shadow-2xl max-sm:shadow-black/90
+          max-sm:text-white max-sm:pt-20 flex sm:items-center gap-5
+          transition-all duration-500 ease-in-out`}
+      >
+
 
         <FiX className="w-7 h-7 absolute right-4 top-4 sm:hidden"
         onClick={()=> setSidebarOpen(false)}/>
@@ -30,51 +37,60 @@ const Navbar = ({theme, setTheme, contactFormOpen, openContactForm, closeContact
         <a
           onClick={() => setSidebarOpen(false)}
           href="#Home"
-          className="relative text-black dark:text-white max-sm:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400 
-          after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
-          after:transition-all after:duration-300
-          hover:after:w-full">Home</a>
+          className="relative text-black dark:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400 
+          after:content-[''] after:absolute after:left-0 after:bottom-0
+          after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
+          after:transition-all after:duration-300 hover:after:w-full
+          max-sm:text-lg max-sm:py-2"
+          >Home</a>
 
         <span className="hidden md:inline">|</span>
 
         <a
           onClick={() => setSidebarOpen(false)}
           href="#About"
-          className="relative text-black dark:text-white max-sm:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400
+          className="relative text-black dark:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400 
             after:content-[''] after:absolute after:left-0 after:bottom-0
             after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
-            after:transition-all after:duration-300
-            hover:after:w-full">About</a>
+            after:transition-all after:duration-300 hover:after:w-full
+            max-sm:text-lg max-sm:py-2"
+          >About</a>
 
         <span className="hidden md:inline">|</span>
 
         <a
           onClick={() => setSidebarOpen(false)}
           href="#Experience"
-          className="relative text-black dark:text-white max-sm:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400
-          after:content-[''] after:absolute after:left-0 after:bottom-0
-          after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
-          after:transition-all after:duration-300 hover:after:w-full">Experience</a>
+          className="relative text-black dark:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400 
+            after:content-[''] after:absolute after:left-0 after:bottom-0
+            after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
+            after:transition-all after:duration-300 hover:after:w-full
+            max-sm:text-lg max-sm:py-2"
+          >Experience</a>
 
         <span className="hidden md:inline">|</span>
 
         <a
           onClick={() => setSidebarOpen(false)}
           href="#Education"
-          className="relative text-black dark:text-white max-sm:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400
-          after:content-[''] after:absolute after:left-0 after:bottom-0
-          after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
-          after:transition-all after:duration-300 hover:after:w-full">Education</a>
+          className="relative text-black dark:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400 
+            after:content-[''] after:absolute after:left-0 after:bottom-0
+            after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
+            after:transition-all after:duration-300 hover:after:w-full
+            max-sm:text-lg max-sm:py-2"
+          >Education</a>
 
         <span className="hidden md:inline">|</span>
 
         <a
           onClick={() => setSidebarOpen(false)}
           href="#Projects"
-          className="relative text-black dark:text-white max-sm:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400
+          className="relative text-black dark:text-white transition-colors duration-300 hover:text-pink-500 dark:hover:text-blue-400 
             after:content-[''] after:absolute after:left-0 after:bottom-0
             after:w-0 after:h-[2px] after:bg-pink-500 dark:after:bg-blue-400
-            after:transition-all after:duration-300 hover:after:w-full">Projects</a>
+            after:transition-all after:duration-300 hover:after:w-full
+            max-sm:text-lg max-sm:py-2"
+          >Projects</a>
       </div>
 
       <div className='flex items-center gap-2 sm:gap-4'>
