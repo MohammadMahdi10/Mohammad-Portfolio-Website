@@ -15,7 +15,7 @@ const Navbar = ({theme, setTheme, contactFormOpen, openContactForm, closeContact
     <div className='flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-20 py-4 sticky top-0 z-50 backdrop-blur-x1 font-medium 
     bg-white dark:bg-gray-900'>
 
-      <h1 className="max-w-[200px] sm:max-w-none truncate sm:whitespace-nowrap text-lg sm:text-2xl font-medium text-black dark:text-white">
+      <h1 className="max-w-[300px] sm:max-w-none truncate sm:whitespace-nowrap text-lg sm:text-2xl font-medium text-black dark:text-white">
         <a href="#Home">Mohammad Sabur Ali Mahdi</a>
       </h1>
 
