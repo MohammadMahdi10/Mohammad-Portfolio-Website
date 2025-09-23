@@ -29,6 +29,14 @@ html, body, div, section, header, footer, main {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+html, body {
+  transform: scale(0.85); /* adjust for mobile */
+  transform-origin: top left;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
