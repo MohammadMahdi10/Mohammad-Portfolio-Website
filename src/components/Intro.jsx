@@ -15,7 +15,7 @@ const Intro = ({ openContactForm }) => {
           </div>
 
           <div className="max-w-lg text-center md:text-left">
-            <h1 className="text-xl font-semibold md:text-[1.2rem] md:font-normal">Hey There!</h1>
+            <h1 className="text-xl font-semibold md:text-[1.2rem] md:font-normal">He There!</h1>
 
             <h1 className="text-[1.5rem] md:text-[2.25rem] font-medium text-gray-900 dark:text-white md:w-[50rem]">My name is Mohammad Mahdi.</h1>
 
