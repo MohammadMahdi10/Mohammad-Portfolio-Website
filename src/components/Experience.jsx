@@ -146,7 +146,7 @@ const Experience = () => {
                 </div>
 
                 {/* Card Details */}
-                <div className="flex flex-col w-153 md:w-258 gap-8 pl-13 md:pl-40">
+                <div className="flex flex-col w-full md:w-153 md:w-258 gap-8 pl-13 md:pl-40">
                   {items.map((exp, index) => {
                     const Icon = exp.icon;
                     return (
