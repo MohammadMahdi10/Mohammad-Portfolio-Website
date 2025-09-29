@@ -25,11 +25,6 @@
   25%, 75% { opacity: 0; }
 }
 
-body, html {
-    overflow-x: hidden;
-}
-
-
 html, body, div, section, header, footer, main {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
