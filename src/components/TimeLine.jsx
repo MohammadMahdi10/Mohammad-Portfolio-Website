@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 {/* Animated TimeLine Section */}
-const TimeLine = () => {
+const TimeLine = ({ desktopHeight = 820, mobileHeight = 700 }) => {
   const containerRef = useRef(null);
   const [lineHeight, setLineHeight] = useState(0);
 
@@ -42,7 +42,7 @@ const TimeLine = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative md:min-h-[700px] min-h-[800px]">
+    <div ref={containerRef} className={`relative min-h-[${mobileHeight}px] md:min-h-[${desktopHeight}px]`}>
 
       <div className="absolute md:left-32 left-8 top-0 bottom-0 w-1 bg-black rounded-md"></div>
 

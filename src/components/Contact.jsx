@@ -12,7 +12,7 @@ const Contact = ({ openContactForm }) => {
       </h1>
 
       {/* Description */}
-      <p className="w-150 text-base md:text-lg mb-8">
+      <p className="max-w-[600px] text-base md:text-lg mb-8">
         I'm open for new opportunities – especially ambitious or large projects. 
         However, my inbox is always open. Whether you have a question or just 
         want to say hi, I'll try my best to get back to you!

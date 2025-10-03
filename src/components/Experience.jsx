@@ -12,7 +12,12 @@ const experiences = {
       title: "AI Evaluator - Outlier",
       date: "January 2025 - Present",
       description:
-        "In this role, I evaluate and rate responses from multiple AI models based on prompts, assessing clarity, correctness, and alignment with task objectives, while reviewing user-submitted prompts and code snippets, identifying logical errors or misunderstandings. I provide detailed feedback and collaborate with the users to refine the answer to ensure consistency and accuracy across assessments.",
+        "In this role, I evaluate and rate responses from multiple AI models based on prompts, assessing clarity, correctness, and alignment with task objectives.",
+      bullets: [
+        "Reviewed AI outputs and identified logical errors",
+        "Provided detailed feedback to users",
+        "Collaborated to refine answers for consistency",
+      ],
       icon: BriefcaseIcon,
     },
   ],
@@ -21,7 +26,12 @@ const experiences = {
       title: "Virtual Work Experience Trainee - Springpod",
       date: "Feburary 2023 - Feburary 2023",
       description:
-        "I built a strong foundation in core technology concepts and essential industry skills, while also participating in interactive exercises and live webinars with industry professionals. This gave me practical insight into tech career paths, employer expectations and how to apply learned concepts into real world scenarios.",
+        "I built a strong foundation in core technology concepts and essential industry skills.",
+      bullets: [
+        "Participated in interactive exercises",
+        "Attended live webinars with professionals",
+        "Applied learned concepts to practical scenarios",
+      ],
       icon: BriefcaseIcon,
     },
   ],
@@ -31,7 +41,6 @@ const RevealCard = ({ children, delay = 0 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { amount: 0.35, once: true });
 
-  {/* Card Pop Up & Swipe */}
   return (
     <motion.div
       ref={ref}
@@ -50,7 +59,6 @@ const RevealCard = ({ children, delay = 0 }) => {
         style={{ transformOrigin: "right" }}
         className="absolute inset-0 bg-[#e07a7f] dark:bg-sky-500 z-30 pointer-events-none"
       />
-
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
@@ -110,7 +118,8 @@ const Experience = () => {
   return (
     <div
       ref={sectionRef}
-      id="Experience" className="dark:bg-[#161E2E] text-gray-100 flex flex-col items-center py-12 pb-20 mt-20 bg-[#fbf7f6] scroll-mt-20 "
+      id="Experience"
+      className="dark:bg-[#161E2E] text-gray-100 flex flex-col items-center py-12 md:pb-20 pb-135 mt-20 bg-[#fbf7f6] scroll-mt-20"
     >
       <SubHeading />
 
@@ -124,12 +133,12 @@ const Experience = () => {
         </h2>
         <div
           ref={titleLineRef}
-          className="w-0 h-1 bg-gradient-to-r from-pink-500 to-pink-200 mx-auto opacity-0 mb-25 dark:from-blue-500 dark:to-purple-500"
+          className="w-0 h-1 bg-gradient-to-r from-pink-500 to-pink-200 mx-auto opacity-0 md:mb-25 dark:from-blue-500 dark:to-purple-500"
         />
       </div>
 
-      <div className="relative w-full max-w-5xl">
-        <TimeLine />
+      <div className="relative w-full max-w-5xl mt-25">
+        <TimeLine desktopHeight = {820} mobileHeight = {800} />
 
         {/* Array To Card */}
         <div ref={triggerRef} className="absolute top-5 left-0 w-full">
@@ -146,25 +155,28 @@ const Experience = () => {
                 </div>
 
                 {/* Card Details */}
-                <div className="flex flex-col w-full md:w-153 md:w-258 gap-8 pl-13 md:pl-40">
+                <div className="flex flex-col w-[95%] max-w-lg md:w-[65rem] md:max-w-[80rem] gap-8 pl-10 md:pl-40 mx-auto">
                   {items.map((exp, index) => {
                     const Icon = exp.icon;
                     return (
                       <RevealCard key={index} delay={index * 0.05}>
-                        <div className="bg-[#fae9e5] dark:bg-gray-800 p-6 rounded-md shadow-lg flex items-start gap-4 text-gray-900 dark:text-gray-100">
+                        <div className="bg-[#fae9e5] dark:bg-gray-800 p-6 rounded-md shadow-lg flex flex-col md:flex-row items-start gap-4 text-gray-900 dark:text-gray-100">
                           <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-[#e07a7f] dark:bg-[#50a1fe]">
                             <Icon className="w-8 h-8 text-white" />
                           </div>
-                          <div>
-                            <h3 className="text-xl font-semibold">
-                              {exp.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                              {exp.date}
-                            </p>
-                            <p className="text-gray-700 dark:text-gray-200 text-justify">
-                              {exp.description}
-                            </p>
+                          <div className="flex-1 space-y-2">
+                            <h3 className="text-xl font-semibold">{exp.title}</h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">{exp.date}</p>
+                            <p className="text-gray-700 dark:text-gray-200">{exp.description}</p>
+                            <p className="font-bold mt-5">What I Gained:</p>
+                            {/* Bullet points */}
+                            {exp.bullets && (
+                              <ul className="list-disc list-outside text-gray-700 dark:text-gray-200 pl-6 space-y-1">
+                                {exp.bullets.map((point, i) => (
+                                  <li key={i}>{point}</li>
+                                ))}
+                              </ul>
+                            )}
                           </div>
                         </div>
                       </RevealCard>

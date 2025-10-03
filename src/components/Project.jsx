@@ -185,7 +185,7 @@ const Project = ({ theme }) => {
 
     {/* Project Section */}
     return (
-        <section ref={sectionRef} id="Projects" className="relative py-40 bg-white dark:bg-gray-900 overflow-hidden scroll-mt-20">
+        <section ref={sectionRef} id="Projects" className="relative py-40 bg-white dark:bg-gray-900 overflow-hidden scroll-mt-20 md:mt-0 mt-70">
             <div className="container mx-auto px-4 mb-16 relative z-10">
                 <h2 ref={titleRef} className="text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-4 opacity-0 dark:text-white">Featured Projects</h2>
                 <div ref={titleLineRef} className="w-0 h-1 bg-gradient-to-r from-pink-500 to-pink-200 mx-auto opacity-0 dark:from-blue-500 dark:to-purple-500"/>

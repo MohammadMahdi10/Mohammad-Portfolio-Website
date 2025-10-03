@@ -30,7 +30,6 @@ const education = {
   ],
 };
 
-{/* Card Pop Up & Swipe */}
 const RevealCard = ({ children, delay = 0 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { amount: 0.35, once: true });
@@ -40,8 +39,8 @@ const RevealCard = ({ children, delay = 0 }) => {
       ref={ref}
       className="relative overflow-hidden"
       whileHover={{
-        y: -4, 
-        boxShadow: "0 12px 24px rgba(0, 0, 0, 0.25)", 
+        y: -4,
+        boxShadow: "0 12px 24px rgba(0, 0, 0, 0.25)",
       }}
       transition={{ type: "spring", stiffness: 220, damping: 18 }}
     >
@@ -110,7 +109,8 @@ const Education = () => {
   return (
     <div
       ref={sectionRef}
-      id="Education" className="dark:bg-gray-900 text-gray-100 flex flex-col items-center py-12 mt-20 scroll-mt-20"
+      id="Education"
+      className="dark:bg-gray-900 text-gray-100 flex flex-col items-center py-12 mt-20 scroll-mt-20"
     >
       {/* Animated Title */}
       <div className="w-full flex flex-col items-center mb-8 mt-20">
@@ -127,7 +127,7 @@ const Education = () => {
       </div>
 
       <div className="relative w-full max-w-5xl">
-        <TimeLine />
+        <TimeLine desktopHeight={700} mobileHeight={700} />
 
         {/* Array To Card */}
         <div className="absolute top-5 left-0 w-full">
@@ -144,27 +144,49 @@ const Education = () => {
                 </div>
 
                 {/* Card Details */}
-                <div className="flex flex-col w-full md:w-153 md:w-258 gap-8 pl-13 md:pl-40"> 
+                <div className="flex flex-col w-[95%] max-w-lg md:w-[65rem] md:max-w-[80rem] gap-8 pl-10 md:pl-40 mx-auto">
                   {items.map((exp, index) => {
                     const Icon = exp.icon;
                     return (
                       <RevealCard key={index} delay={index * 0.05}>
-                        <div className="bg-[#fae9e5] dark:bg-gray-800 p-6 rounded-md shadow-lg flex items-start gap-4 text-gray-900 dark:text-gray-100">
+                        <div className="bg-[#fae9e5] dark:bg-gray-800 p-6 rounded-md shadow-lg flex flex-col md:flex-row items-start gap-4 text-gray-900 dark:text-gray-100">
                           <div
                             className={`flex items-center justify-center rounded-xl bg-[#e07a7f] dark:bg-[#50a1fe]
-                              ${year === "2022" ? "w-[2.5rem] h-[4.2rem]" : "w-16 h-16"}`}>
+                              ${year === "2022" ? "w-[2.5rem] h-[4.2rem]" : "w-16 h-16"}`}
+                          >
                             <Icon className="w-8 h-8 text-white" />
                           </div>
-                        <div>
-                          <h3 className="text-xl font-semibold">{exp.title}</h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{exp.date}</p>
-                          <div className="text-gray-700 dark:text-gray-200 text-justify">{Array.isArray(exp.description) ? (<>{year === "2024" ? (<>
-                              <p>{exp.description[0]}</p>
-                              {exp.description.length > 1 && (<ul className="list-disc list-inside ml-4 mt-1">{exp.description.slice(1).map((item, idx) => (
-                                <li key={idx}>{item}</li>))}</ul>)}</>) : (<ul className="list-disc list-inside ml-4 mt-1">{exp.description.map((item, idx) => (
-                                <li key={idx}>{item}</li>))}
-                              </ul>)}</>) : (exp.description)}
+                          <div className="flex-1 space-y-2">
+                            <h3 className="text-xl font-semibold">{exp.title}</h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">{exp.date}</p>
+
+                            <div className="text-gray-700 dark:text-gray-200 text-justify">
+                              {Array.isArray(exp.description) ? (
+                                exp.description.every(item => item.length <= 30) ? (
+                                  // All short items => render all as bullets
+                                  <ul className="list-disc list-inside ml-4 mt-1 space-y-1">
+                                    {exp.description.map((item, idx) => (
+                                      <li key={idx}>{item}</li>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  // Long first item => first as paragraph, rest as bullets
+                                  <>
+                                    {exp.description.length > 0 && <p>{exp.description[0]}</p>}
+                                    {exp.description.length > 1 && (
+                                      <ul className="list-disc list-inside ml-4 mt-1 space-y-1">
+                                        {exp.description.slice(1).map((item, idx) => (
+                                          <li key={idx}>{item}</li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </>
+                                )
+                              ) : (
+                                exp.description
+                              )}
                             </div>
+
                           </div>
                         </div>
                       </RevealCard>
