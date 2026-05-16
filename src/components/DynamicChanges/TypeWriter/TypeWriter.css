@@ -1,0 +1,26 @@
+.typewriter-text {
+  white-space: pre;
+}
+
+.typewriter-cursor {
+  margin-left: 0.25rem;
+  border-right: 4px solid currentColor;
+  animation: blink 1s step-end infinite;
+}
+
+.typewriter-main {
+  color: #e07b7b;
+  font-size: 4.5rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.dark .typewriter-main {
+  color: #60a5fa;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

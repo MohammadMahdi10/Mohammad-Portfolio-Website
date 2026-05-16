@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./TypeWriter.css";
 
-{/* Typewriter Section */}
-const TypewriterText = ({ text = "", speed = 100, className }) => {
+const TypewriterText = ({ text = "", speed = 100, className = "" }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
@@ -14,15 +14,14 @@ const TypewriterText = ({ text = "", speed = 100, className }) => {
   useEffect(() => {
     const onScroll = () => {
       const current = window.scrollY || 0;
-      if (current > lastScrollY.current) 
-      {
+
+      if (current > lastScrollY.current) {
         scrollDir.current = "down";
-      }
-      else if (current < lastScrollY.current)
-      {
+      } else if (current < lastScrollY.current) {
         scrollDir.current = "up";
       }
-        lastScrollY.current = current;
+
+      lastScrollY.current = current;
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -34,16 +33,12 @@ const TypewriterText = ({ text = "", speed = 100, className }) => {
       setHasTyped(true);
     };
 
-    {/* Typewrite Management */}
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (scrollDir.current === "down") 
-          {
+          if (scrollDir.current === "down") {
             startTyping();
-          } 
-          else if (!hasTyped) 
-          {
+          } else if (!hasTyped) {
             setDisplayedText(text);
             setIndex(text.length);
             setHasTyped(true);
@@ -53,21 +48,15 @@ const TypewriterText = ({ text = "", speed = 100, className }) => {
       { threshold: 0.35 }
     );
 
-    {/* Reload Typewrite Management */}
-    if (spanRef.current) 
-    {
+    if (spanRef.current) {
       observer.observe(spanRef.current);
 
-      if (spanRef.current.getBoundingClientRect().top < window.innerHeight) 
-      {
-        if (lastScrollY.current > spanRef.current.getBoundingClientRect().bottom) 
-        {
+      if (spanRef.current.getBoundingClientRect().top < window.innerHeight) {
+        if (lastScrollY.current > spanRef.current.getBoundingClientRect().bottom) {
           setDisplayedText(text);
           setIndex(text.length);
           setHasTyped(true);
-        } 
-        else 
-        {
+        } else {
           startTyping();
         }
       }
@@ -79,38 +68,35 @@ const TypewriterText = ({ text = "", speed = 100, className }) => {
     };
   }, [text, hasTyped]);
 
-  {/* Typewrite Effect */}
   useEffect(() => {
     if (!isTyping) return;
 
-    if (index < text.length) 
-    {
+    if (index < text.length) {
       const t = setTimeout(() => {
         setDisplayedText((prev) => prev + text[index]);
         setIndex((i) => i + 1);
       }, speed);
+
       return () => clearTimeout(t);
-    } 
-    else 
-    {
-      setIsTyping(false);
     }
+
+    setIsTyping(false);
   }, [index, isTyping, text, speed]);
 
   return (
-    <span ref={spanRef} className={`${className} whitespace-pre`}>
+    <span ref={spanRef} className={`typewriter-text ${className}`}>
       {displayedText}
-      {isTyping && <span className="ml-1 border-r-4 border-current animate-blink" />}
+      {isTyping && <span className="typewriter-cursor" />}
     </span>
   );
 };
 
-export default function MyComponent() {
+export default function TypeWriter() {
   return (
     <TypewriterText
       text="My Journey"
       speed={150}
-      className="text-[#e07b7b] dark:text-blue-400 text-7xl block mt-2"
+      className="typewriter-main"
     />
   );
 }
