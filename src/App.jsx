@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Navbar from './components/Navbar'
-import Intro from './components/Intro';
+import Navbar from './components/Navbar/Navbar';
+import Intro from './components/Intro/Intro';
 import SmallButton from './components/SmallButton';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';

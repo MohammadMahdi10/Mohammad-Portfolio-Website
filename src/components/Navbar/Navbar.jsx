@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import assets from "../assets/assets";
-import ThemeToggleBtn from "./ThemeToggleBtn";
+import assets from "../../assets/assets";
+import ThemeToggleBtn from "../ThemeToggleBtn";
 import { FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
