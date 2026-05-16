@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import "./TimeLine.css";
 
-{/* Animated TimeLine Section */}
 const TimeLine = ({ desktopHeight = 820, mobileHeight = 700 }) => {
   const containerRef = useRef(null);
   const [lineHeight, setLineHeight] = useState(0);
 
   useEffect(() => {
-    {/* Animation With Scroll */}
     const handleScroll = () => {
       const container = containerRef.current;
       if (!container) return;
@@ -17,16 +16,11 @@ const TimeLine = ({ desktopHeight = 820, mobileHeight = 700 }) => {
 
       let progress = 0;
 
-      if (rect.top < startOffset && rect.bottom > 0) 
-      {
+      if (rect.top < startOffset && rect.bottom > 0) {
         progress = Math.min(rect.height, startOffset - rect.top);
-      } 
-      else if (rect.top >= startOffset) 
-      {
+      } else if (rect.top >= startOffset) {
         progress = 0;
-      } 
-      else if (rect.bottom <= 0) 
-      {
+      } else if (rect.bottom <= 0) {
         progress = rect.height;
       }
 
@@ -36,45 +30,41 @@ const TimeLine = ({ desktopHeight = 820, mobileHeight = 700 }) => {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <div ref={containerRef} className={`relative min-h-[${mobileHeight}px] md:min-h-[${desktopHeight}px]`}>
+  const isDark = document.documentElement.classList.contains("dark");
 
-      <div className="absolute md:left-32 left-8 top-0 bottom-0 w-1 bg-black rounded-md"></div>
+  const lineBackground = containerRef.current
+    ? `linear-gradient(
+        to bottom,
+        ${isDark ? "#3B82F6" : "#EC4899"} 0%,
+        ${isDark ? "#9333EA" : "#FBCFE8"} ${Math.max(
+          ((lineHeight - 20) / containerRef.current.offsetHeight) * 100,
+          0
+        )}%,
+        ${isDark ? "#9333EA" : "#FBCFE8"} 100%
+      )`
+    : isDark
+    ? "#3B82F6"
+    : "#EC4899";
+
+  return (
+    <div
+      ref={containerRef}
+      className="timeline-container"
+      style={{
+        "--mobile-height": `${mobileHeight}px`,
+        "--desktop-height": `${desktopHeight}px`,
+      }}
+    >
+      <div className="timeline-base-line"></div>
 
       <div
-        className="absolute md:left-32 left-8 top-0 w-1 rounded-md transition-none dark:mix-blend-lighten"
+        className="timeline-progress-line"
         style={{
           height: `${lineHeight}px`,
-          background: containerRef.current
-            ? `linear-gradient(
-                to bottom,
-                ${
-                  document.documentElement.classList.contains("dark")
-                    ? "#3B82F6"
-                    : "#EC4899"
-                } 0%, 
-                ${
-                  document.documentElement.classList.contains("dark")
-                    ? "#9333EA"
-                    : "#FBCFE8"
-                } ${Math.max(
-                  (lineHeight - 20) / containerRef.current.offsetHeight * 100,
-                  0
-                )}%, 
-                ${
-                  document.documentElement.classList.contains("dark")
-                    ? "#9333EA"
-                    : "#FBCFE8"
-                } 100%
-              )`
-            : document.documentElement.classList.contains("dark")
-            ? "#3B82F6"
-            : "#EC4899", 
+          background: lineBackground,
         }}
       ></div>
     </div>
