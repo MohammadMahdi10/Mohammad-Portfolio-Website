@@ -1,0 +1,139 @@
+.about-section {
+  margin-top: 13rem;
+  padding: 0 1.5rem;
+  scroll-margin-top: 12.5rem;
+}
+
+.about-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.about-intro {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+  max-width: 36rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  max-width: 42rem;
+}
+
+.skills-heading,
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-heading {
+  font-weight: 600;
+}
+
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #15803d;
+  font-weight: 800;
+}
+
+.about-description {
+  font-size: 1.125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+  max-width: 56rem;
+  color: #6b7280;
+}
+
+.about-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 6.5rem;
+}
+
+.about-buttons button {
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.projects-btn {
+  background: #fbf7f6;
+  color: black;
+  border: none;
+}
+
+.projects-btn:hover {
+  background: #f2eae8;
+}
+
+.cv-btn {
+  background: transparent;
+  border: 0.13rem solid black;
+}
+
+.cv-btn:hover {
+  background: black;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .about-intro,
+  .skills-list {
+    font-size: 1.1rem;
+  }
+}
+
+.dark .about-container h1 {
+  color: #60a5fa;
+}
+
+.dark .about-intro {
+  color: #e5e7eb;
+}
+
+.dark .about-description {
+  color: #f3f4f6;
+}
+
+.dark .projects-btn {
+  background: #385796;
+  color: white;
+}
+
+.dark .projects-btn:hover {
+  background: #4b78d2;
+}
+
+.dark .cv-btn {
+  border-color: white;
+  color: white;
+}
+
+.dark .cv-btn:hover {
+  background: white;
+  color: #111827;
+}

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from './components/Navbar'
 import Intro from './components/Intro';
 import SmallButton from './components/SmallButton';
-import About from './components/About';
+import About from './components/About/About';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Project from './components/Project';
