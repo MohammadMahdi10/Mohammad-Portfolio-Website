@@ -1,4 +1,4 @@
-import TypeWriter from "../TypeWriter";
+import TypeWriter from "../DynamicChanges/TypeWriter";
 import "./SubHeading.css";
 
 const SubHeading = () => {

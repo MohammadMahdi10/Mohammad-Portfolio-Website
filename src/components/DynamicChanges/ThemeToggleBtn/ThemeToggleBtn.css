@@ -1,0 +1,13 @@
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+}
+
+.theme-toggle-icon {
+  width: 2.125rem;
+  height: 2.125rem;
+  padding: 0.375rem;
+  border: 1px solid #6b7280;
+  border-radius: 999px;
+  cursor: pointer;
+}

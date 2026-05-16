@@ -3,7 +3,7 @@ import { AcademicCapIcon } from "@heroicons/react/24/solid";
 import { motion, useInView } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TimeLine from "../TimeLine";
+import TimeLine from "../DynamicChanges/TimeLine/TimeLine";
 import "./Education.css";
 
 const education = {
