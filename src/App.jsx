@@ -8,7 +8,7 @@ import SmallButton from './components/SmallButton';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
 import Education from './components/Education/Education';
-import Project from './components/Project';
+import Project from './components/Project/Project';
 import Contact from "./components/Contact/Contact";
 import Ending from "./components/Ending/Ending";
 

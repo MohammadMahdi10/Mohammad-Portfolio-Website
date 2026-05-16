@@ -1,0 +1,267 @@
+.projects-section {
+  position: relative;
+  padding: 10rem 0;
+  background: white;
+  overflow: hidden;
+  scroll-margin-top: 5rem;
+  margin-top: 17.5rem;
+}
+
+.projects-heading-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.projects-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  margin-bottom: 1rem;
+  opacity: 0;
+}
+
+.projects-heading-line {
+  width: 0;
+  height: 0.25rem;
+  background: linear-gradient(to right, #ec4899, #fbcfe8);
+  margin: 0 auto;
+  opacity: 0;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  opacity: 0;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-title-link {
+  margin-top: 7.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.project-title-link:hover {
+  color: #9ca3af;
+}
+
+.project-github-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 7.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.project-github-icon:hover {
+  color: #9ca3af;
+}
+
+.project-github-light {
+  color: black;
+}
+
+.project-github-dark {
+  color: white;
+}
+
+.project-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 48rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-overlay-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 50;
+  background: white;
+  border-radius: 999px;
+  padding: 0.5rem;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.project-overlay-btn:hover {
+  background: #e5e7eb;
+}
+
+.project-overlay-btn img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.project-image,
+.project-overlay-image {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  border: 1px solid #374151;
+  transition: all 0.7s ease-in-out;
+}
+
+.project-overlay-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+.project-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-overlay-content {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  pointer-events: auto;
+}
+
+.project-overlay-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: black;
+}
+
+.project-overlay-title-spaced {
+  margin-bottom: 0.75rem;
+}
+
+.project-special-text {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+.project-overlay-text {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.project-overlay-text ul {
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 2rem;
+  width: 35rem;
+  font-size: 0.82rem;
+}
+
+.project-overlay-text li {
+  line-height: 1.625;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: -0.5rem;
+}
+
+.project-tags span {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 999px;
+  background: #1c2541;
+  color: #e5e7eb;
+}
+
+.dark .projects-section {
+  background: #111827;
+}
+
+.dark .projects-heading,
+.dark .project-title,
+.dark .project-overlay-title {
+  color: white;
+}
+
+.dark .projects-heading-line {
+  background: linear-gradient(to right, #3b82f6, #a855f7);
+}
+
+.dark .project-special-text {
+  color: #9ca3af;
+}
+
+.dark .project-overlay-text li {
+  color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+  .projects-section {
+    margin-top: 0;
+  }
+
+  .projects-heading {
+    font-size: 3rem;
+  }
+
+  .project-title {
+    font-size: 1.875rem;
+  }
+
+  .project-overlay-btn {
+    top: 0.75rem;
+    left: 0.5rem;
+    right: auto;
+  }
+
+  .project-overlay-title {
+    font-size: 1.5rem;
+    margin-left: 5rem;
+    margin-top: 0.75rem;
+  }
+
+  .project-special-text {
+    margin-left: 5rem;
+  }
+
+  .project-overlay-text ul {
+    font-size: 1rem;
+    margin-left: 4.75rem;
+  }
+}
