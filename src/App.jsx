@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Navbar from './components/Navbar/Navbar';
 import Intro from './components/Intro/Intro';
-import SmallButton from './components/SmallButton';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
 import Education from './components/Education/Education';
@@ -36,7 +35,6 @@ const App = () => {
     <div className='dark:bg-gray-900 relative'>
       <Navbar theme={theme} setTheme={setTheme} contactFormOpen={contactFormOpen} openContactForm={openContactForm} closeContactForm={closeContactForm}/>
       <Intro openContactForm={openContactForm}/>
-      <SmallButton/>
       <About/>
       <Experience/>
       <Education/>

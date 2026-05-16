@@ -1,0 +1,18 @@
+.subheading-title {
+  color: black;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.dark .subheading-title {
+  color: #f3f4f6;
+}
+
+@media (min-width: 768px) {
+  .subheading-title {
+    font-size: 1.875rem;
+  }
+}

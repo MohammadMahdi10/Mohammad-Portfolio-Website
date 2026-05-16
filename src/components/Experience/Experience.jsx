@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TimeLine from "../TimeLine";
-import SubHeading from "../SubHeading";
+import SubHeading from "../SubHeading/SubHeading";
 import "./Experience.css";
 
 const experiences = {
