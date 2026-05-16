@@ -1,0 +1,153 @@
+.intro-wrapper {
+  background: white;
+  scroll-margin-top: 22.5rem;
+}
+
+.intro-section {
+  background: #fbf7f6;
+  padding: 2rem;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 4rem 2rem;
+}
+
+.intro-image-container {
+  flex-shrink: 0;
+}
+
+.intro-image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 4px solid black;
+}
+
+.intro-text {
+  max-width: 32rem;
+  text-align: center;
+}
+
+.intro-greeting {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.intro-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.intro-text hr {
+  margin-top: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 66.666%;
+  border-color: #e5e7eb;
+}
+
+.intro-text p {
+  margin-top: 1.5rem;
+  color: #374151;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.intro-btn {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 0.16rem solid black;
+  width: 9.25rem;
+  height: 2.75rem;
+  background: transparent;
+  font-weight: 600;
+}
+
+.intro-btn:hover {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+.dark .intro-wrapper {
+  background: #111827;
+}
+
+.dark .intro-section {
+  background: #161e2e;
+}
+
+.dark .intro-image {
+  border-color: white;
+}
+
+.dark .intro-name {
+  color: white;
+}
+
+.dark .intro-text hr {
+  border-color: white;
+}
+
+.dark .intro-text p {
+  color: #d1d5db;
+}
+
+.dark .intro-btn {
+  color: white;
+  border-color: white;
+}
+
+.dark .intro-btn:hover {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+@media (min-width: 768px) {
+  .intro-content {
+    flex-direction: row;
+    margin-right: 17.5rem;
+  }
+
+  .intro-image {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 0;
+    border: none;
+  }
+
+  .intro-text {
+    text-align: left;
+  }
+
+  .intro-greeting {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .intro-name {
+    font-size: 2.25rem;
+    width: 50rem;
+  }
+
+  .intro-text hr {
+    margin-left: 0;
+    margin-right: 0;
+    width: 37.5rem;
+  }
+
+  .intro-text p {
+    width: 51rem;
+  }
+}
