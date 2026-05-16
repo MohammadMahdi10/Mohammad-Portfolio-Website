@@ -1,0 +1,254 @@
+.experience-section {
+  background: #fbf7f6;
+  color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 33.75rem;
+  margin-top: 5rem;
+  scroll-margin-top: 5rem;
+}
+
+.experience-title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+
+.experience-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  margin-bottom: 1rem;
+  opacity: 0;
+}
+
+.experience-title-line {
+  width: 0;
+  height: 0.25rem;
+  background: linear-gradient(to right, #ec4899, #fbcfe8);
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+
+.experience-timeline-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  margin-top: 6.25rem;
+}
+
+.experience-content {
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  width: 100%;
+}
+
+.experience-year-block {
+  margin-bottom: 5rem;
+}
+
+.experience-year-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-left: 3.5rem;
+}
+
+.experience-year-dot {
+  position: absolute;
+  left: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #f9a8d4;
+  border-radius: 999px;
+  border: 4px solid #111827;
+}
+
+.experience-year {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4b5563;
+}
+
+.experience-cards {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 32rem;
+  gap: 2rem;
+  padding-left: 2.5rem;
+  margin: 0 auto;
+}
+
+.experience-reveal-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-reveal-cover {
+  position: absolute;
+  inset: 0;
+  background: #e07a7f;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.experience-reveal-content {
+  position: relative;
+  z-index: 20;
+}
+
+.experience-card {
+  background: #fae9e5;
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  color: #111827;
+}
+
+.experience-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  background: #e07a7f;
+}
+
+.experience-icon {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+.experience-card-content {
+  flex: 1;
+}
+
+.experience-card-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.experience-date {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.experience-description {
+  color: #374151;
+  margin-top: 0.5rem;
+}
+
+.experience-gained-title {
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+.experience-bullets {
+  list-style: disc;
+  list-style-position: outside;
+  color: #374151;
+  padding-left: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.experience-bullets li {
+  margin-bottom: 0.25rem;
+}
+
+.dark .experience-section {
+  background: #161e2e;
+}
+
+.dark .experience-title {
+  color: white;
+}
+
+.dark .experience-title-line {
+  background: linear-gradient(to right, #3b82f6, #a855f7);
+}
+
+.dark .experience-year-dot {
+  background: #50a1fe;
+  border-color: #1f2937;
+}
+
+.dark .experience-year {
+  color: #d1d5db;
+}
+
+.dark .experience-reveal-cover {
+  background: #0ea5e9;
+}
+
+.dark .experience-card {
+  background: #1f2937;
+  color: #f3f4f6;
+}
+
+.dark .experience-icon-box {
+  background: #50a1fe;
+}
+
+.dark .experience-date {
+  color: #9ca3af;
+}
+
+.dark .experience-description,
+.dark .experience-bullets {
+  color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+  .experience-section {
+    padding-bottom: 5rem;
+  }
+
+  .experience-title {
+    font-size: 3rem;
+  }
+
+  .experience-title-line {
+    margin-bottom: 6.25rem;
+  }
+
+  .experience-year-header {
+    padding-left: 10rem;
+  }
+
+  .experience-year-dot {
+    left: 7.5rem;
+  }
+
+  .experience-cards {
+    width: 65rem;
+    max-width: 80rem;
+    padding-left: 10rem;
+  }
+
+  .experience-card {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience-title {
+    font-size: 3.75rem;
+  }
+}

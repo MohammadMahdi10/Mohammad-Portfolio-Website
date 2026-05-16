@@ -1,0 +1,162 @@
+.ending-section {
+  padding: 2.5rem 1rem 0;
+}
+
+.ending-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.ending-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.ending-info h1 {
+  width: 10rem;
+  white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+}
+
+.ending-info p {
+  max-width: 28rem;
+}
+
+.ending-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.ending-links a {
+  color: black;
+  transition: color 0.3s;
+}
+
+.ending-links a:hover {
+  color: #ec4899;
+}
+
+.ending-section hr {
+  border: none;
+  border-top: 1px solid #d1d5db;
+  margin: 1.5rem 0;
+}
+
+.ending-bottom {
+  padding-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ending-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ending-icons a {
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.ending-icons a:hover {
+  color: black;
+}
+
+.dark .ending-section {
+  background: #111827;
+}
+
+.dark .ending-info {
+  color: #9ca3af;
+}
+
+.dark .ending-info h1,
+.dark .ending-links a {
+  color: white;
+}
+
+.dark .ending-info p,
+.dark .ending-links,
+.dark .ending-bottom p {
+  color: #e5e7eb;
+}
+
+.dark .ending-links a:hover {
+  color: #60a5fa;
+}
+
+.dark .ending-section hr {
+  border-top-color: #4b5563;
+}
+
+.dark .ending-icons a {
+  color: #9ca3af;
+}
+
+.dark .ending-icons a:hover {
+  color: white;
+}
+
+@media (min-width: 640px) {
+  .ending-section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .ending-info h1 {
+    width: 10rem;
+  }
+
+  .ending-bottom {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ending-section {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .ending-content {
+    align-items: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ending-section {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .ending-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 639px) {
+  .ending-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ending-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

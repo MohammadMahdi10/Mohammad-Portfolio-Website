@@ -6,11 +6,11 @@ import Navbar from './components/Navbar'
 import Intro from './components/Intro';
 import SmallButton from './components/SmallButton';
 import About from './components/About/About';
-import Experience from './components/Experience';
-import Education from './components/Education';
+import Experience from './components/Experience/Experience';
+import Education from './components/Education/Education';
 import Project from './components/Project';
-import Contact from "./components/Contact";
-import Ending from "./components/Ending";
+import Contact from "./components/Contact/Contact";
+import Ending from "./components/Ending/Ending";
 
 const App = () => {
   const [theme, setTheme] = useState(() => {
