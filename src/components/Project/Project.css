@@ -49,6 +49,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 4rem;
+  transform: translateX(1.5rem);
 }
 
 .project-card {
@@ -66,9 +67,12 @@
   font-weight: 700;
   color: black;
   margin-bottom: 1rem;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  text-align: center;
 }
 
 .project-title-link {
@@ -87,6 +91,7 @@
   margin-top: 7.5rem;
   cursor: pointer;
   transition: color 0.3s;
+  flex-shrink: 0;
 }
 
 .project-github-icon:hover {
@@ -110,7 +115,7 @@
   position: relative;
   width: 100%;
   max-width: 48rem;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem;
 }
 
 .project-overlay-btn {
@@ -212,6 +217,7 @@
   justify-content: center;
   gap: 0.5rem;
   margin-top: -0.5rem;
+  max-width: 48rem;
 }
 
 .project-tags span {
@@ -249,11 +255,11 @@
 }
 
 .project-arrow-left {
-  left: 0;
+  left: -0.5rem;
 }
 
 .project-arrow-right {
-  right: 0;
+  right: -0.5rem;
 }
 
 .dark .projects-section {
@@ -324,12 +330,21 @@
 @media (max-width: 767px) {
   .project-carousel {
     padding: 0 2.75rem;
+    transform: translateX(0.5rem);
   }
 
   .project-arrow {
     width: 2.4rem;
     height: 2.4rem;
     font-size: 2rem;
+  }
+
+  .project-arrow-left {
+    left: -0.35rem;
+  }
+
+  .project-arrow-right {
+    right: -0.35rem;
   }
 
   .project-overlay-text ul {
