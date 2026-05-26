@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./TimeLine.css";
 
-const TimeLine = ({ desktopHeight = 820, mobileHeight = 700 }) => {
+const TimeLine = () => {
   const containerRef = useRef(null);
   const [lineHeight, setLineHeight] = useState(0);
+  const [isDark, setIsDark] = useState(
+    document.documentElement.classList.contains("dark")
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,37 +30,43 @@ const TimeLine = ({ desktopHeight = 820, mobileHeight = 700 }) => {
       setLineHeight(progress);
     };
 
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
-  const isDark = document.documentElement.classList.contains("dark");
+  const progressPercent = containerRef.current
+    ? Math.max(
+        ((lineHeight - 20) / containerRef.current.offsetHeight) * 100,
+        0
+      )
+    : 0;
 
-  const lineBackground = containerRef.current
-    ? `linear-gradient(
-        to bottom,
-        ${isDark ? "#3B82F6" : "#EC4899"} 0%,
-        ${isDark ? "#9333EA" : "#FBCFE8"} ${Math.max(
-          ((lineHeight - 20) / containerRef.current.offsetHeight) * 100,
-          0
-        )}%,
-        ${isDark ? "#9333EA" : "#FBCFE8"} 100%
-      )`
-    : isDark
-    ? "#3B82F6"
-    : "#EC4899";
+  const lineBackground = `linear-gradient(
+    to bottom,
+    ${isDark ? "#3B82F6" : "#EC4899"} 0%,
+    ${isDark ? "#9333EA" : "#FBCFE8"} ${progressPercent}%,
+    ${isDark ? "#9333EA" : "#FBCFE8"} 100%
+  )`;
 
   return (
-    <div
-      ref={containerRef}
-      className="timeline-container"
-      style={{
-        "--mobile-height": `${mobileHeight}px`,
-        "--desktop-height": `${desktopHeight}px`,
-      }}
-    >
+    <div ref={containerRef} className="timeline-container">
       <div className="timeline-base-line"></div>
 
       <div

@@ -10,6 +10,17 @@ import "./Experience.css";
 const experiences = {
   2025: [
     {
+      title: "Lab Demonstrator - Queen Mary University of London",
+      date: "October 2025 - Present",
+      description:
+        "Supporting Year-1 labs (programming, debugging, tooling, documentation), explaining core CS concepts and best practices to students.",
+      bullets: [
+        "Professional and Research Practice Module",
+        "Information Systems Analysis Module",
+      ],
+      icon: BriefcaseIcon,
+    },
+    {
       title: "AI Evaluator - Outlier",
       date: "January 2025 - Present",
       description:
@@ -129,7 +140,7 @@ const Experience = () => {
       </div>
 
       <div className="experience-timeline-wrapper">
-        <TimeLine desktopHeight={820} mobileHeight={800} />
+        <TimeLine />
 
         <div ref={triggerRef} className="experience-content">
           {Object.entries(experiences)

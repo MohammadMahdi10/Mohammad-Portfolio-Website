@@ -119,7 +119,7 @@ const Education = () => {
       </div>
 
       <div className="education-timeline-wrapper">
-        <TimeLine desktopHeight={700} mobileHeight={700} />
+        <TimeLine />
 
         <div className="education-content">
           {Object.entries(education)

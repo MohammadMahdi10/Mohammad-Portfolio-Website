@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
-  padding-bottom: 33.75rem;
+  padding-bottom: 5rem;
   margin-top: 5rem;
   scroll-margin-top: 5rem;
 }
@@ -42,17 +42,23 @@
   width: 100%;
   max-width: 64rem;
   margin-top: 6.25rem;
+  padding-bottom: 3rem;
 }
 
 .experience-content {
-  position: absolute;
-  top: 1.25rem;
+  position: relative;
+  top: 0;
   left: 0;
   width: 100%;
+  z-index: 5;
 }
 
 .experience-year-block {
   margin-bottom: 5rem;
+}
+
+.experience-year-block:last-child {
+  margin-bottom: 0;
 }
 
 .experience-year-header {
@@ -71,6 +77,7 @@
   background: #f9a8d4;
   border-radius: 999px;
   border: 4px solid #111827;
+  z-index: 10;
 }
 
 .experience-year {
@@ -127,6 +134,7 @@
   height: 4rem;
   border-radius: 0.75rem;
   background: #e07a7f;
+  flex-shrink: 0;
 }
 
 .experience-icon {
@@ -217,7 +225,7 @@
 
 @media (min-width: 768px) {
   .experience-section {
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
   }
 
   .experience-title {
