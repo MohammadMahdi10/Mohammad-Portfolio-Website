@@ -35,9 +35,20 @@
 
 .projects-list {
   display: flex;
-  flex-direction: column;
-  gap: 5rem;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
+  width: 100%;
+}
+
+.project-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
 }
 
 .project-card {
@@ -47,6 +58,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 3rem;
+  width: 100%;
 }
 
 .project-title {
@@ -197,6 +209,7 @@
 .project-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   margin-top: -0.5rem;
 }
@@ -207,6 +220,40 @@
   border-radius: 999px;
   background: #1c2541;
   color: #e5e7eb;
+}
+
+.project-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 60;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(28, 37, 65, 0.85);
+  color: white;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.25rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.project-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: rgba(28, 37, 65, 1);
+}
+
+.project-arrow-left {
+  left: 0;
+}
+
+.project-arrow-right {
+  right: 0;
 }
 
 .dark .projects-section {
@@ -229,6 +276,14 @@
 
 .dark .project-overlay-text li {
   color: #e5e7eb;
+}
+
+.dark .project-arrow {
+  background: rgba(59, 130, 246, 0.85);
+}
+
+.dark .project-arrow:hover {
+  background: rgba(59, 130, 246, 1);
 }
 
 @media (min-width: 768px) {
@@ -263,5 +318,32 @@
   .project-overlay-text ul {
     font-size: 1rem;
     margin-left: 4.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-carousel {
+    padding: 0 2.75rem;
+  }
+
+  .project-arrow {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 2rem;
+  }
+
+  .project-overlay-text ul {
+    width: auto;
+    font-size: 0.7rem;
+    padding-left: 1.25rem;
+  }
+
+  .project-overlay-content {
+    padding: 1rem;
+  }
+
+  .project-title-link,
+  .project-github-icon {
+    margin-top: 3rem;
   }
 }

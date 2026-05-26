@@ -10,6 +10,7 @@ const Project = ({ theme }) => {
   const titleRef = useRef(null);
   const titleLineRef = useRef(null);
   const triggerRef = useRef(null);
+  const cardRef = useRef(null);
 
   const overlayTitleRefs = useRef({});
   const overlayTextRefs = useRef({});
@@ -106,7 +107,14 @@ const Project = ({ theme }) => {
         "Statistics & Comparisons: Horse performance stats are tracked, saved, and can be compared across races.",
         "Version Control: Project source code and updates are maintained on GitHub for version tracking.",
       ],
-      overlayTags: ["Java", "JFrame", "OOP", "Simulation", "Custom Tracks", "Horse Racing"],
+      overlayTags: [
+        "Java",
+        "JFrame",
+        "OOP",
+        "Simulation",
+        "Custom Tracks",
+        "Horse Racing",
+      ],
       youtube: "https://www.youtube.com/watch?v=i5nXF1HZxJk",
       gitHub: "https://github.com/MohammadMahdi10/HorseRaceSimulator",
     },
@@ -118,12 +126,43 @@ const Project = ({ theme }) => {
   }, {});
 
   const [activeOverlay, setActiveOverlay] = useState(initialOverlayState);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
+  const currentProject = projectImages[currentProjectIndex];
 
   const handleOverlayToggle = (id) => {
     setActiveOverlay((prev) => ({
       ...prev,
       [id]: !prev[id],
     }));
+  };
+
+  const changeProject = (direction) => {
+    if (!cardRef.current) return;
+
+    gsap.to(cardRef.current, {
+      x: direction === "next" ? -90 : 90,
+      opacity: 0,
+      duration: 0.35,
+      ease: "power2.in",
+      onComplete: () => {
+        setActiveOverlay(initialOverlayState);
+
+        setCurrentProjectIndex((prev) => {
+          if (direction === "next") {
+            return prev === projectImages.length - 1 ? 0 : prev + 1;
+          }
+
+          return prev === 0 ? projectImages.length - 1 : prev - 1;
+        });
+
+        gsap.fromTo(
+          cardRef.current,
+          { x: direction === "next" ? 90 : -90, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }
+        );
+      },
+    });
   };
 
   useEffect(() => {
@@ -194,61 +233,56 @@ const Project = ({ theme }) => {
       }
     );
 
-    const projects = gsap.utils.toArray(".project-card");
-    projects.forEach((project) => {
-      gsap.fromTo(
-        project,
-        { opacity: 0, y: 100, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          rotate: 0,
-          scale: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: project,
-            start: "top 70%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
+    gsap.fromTo(
+      cardRef.current,
+      { opacity: 0, y: 100, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
   }, []);
 
   useEffect(() => {
-    projectImages.forEach((project) => {
-      const titleEl = overlayTitleRefs.current[project.id];
-      const textEl = overlayTextRefs.current[project.id];
-      const specialTextEl = overlayTextRefs.current[`specialText${project.id}`];
+    const titleEl = overlayTitleRefs.current[currentProject.id];
+    const textEl = overlayTextRefs.current[currentProject.id];
+    const specialTextEl =
+      overlayTextRefs.current[`specialText${currentProject.id}`];
 
-      if (activeOverlay[project.id]) {
-        if (titleEl) {
-          gsap.fromTo(
-            titleEl,
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }
-          );
-        }
-
-        if (textEl) {
-          gsap.fromTo(
-            textEl,
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.2 }
-          );
-        }
-
-        if (specialTextEl) {
-          gsap.fromTo(
-            specialTextEl,
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.15 }
-          );
-        }
+    if (activeOverlay[currentProject.id]) {
+      if (titleEl) {
+        gsap.fromTo(
+          titleEl,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }
+        );
       }
-    });
-  }, [activeOverlay]);
+
+      if (textEl) {
+        gsap.fromTo(
+          textEl,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.2 }
+        );
+      }
+
+      if (specialTextEl) {
+        gsap.fromTo(
+          specialTextEl,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.15 }
+        );
+      }
+    }
+  }, [activeOverlay, currentProject.id]);
 
   return (
     <section ref={sectionRef} id="Projects" className="projects-section">
@@ -261,33 +295,47 @@ const Project = ({ theme }) => {
       </div>
 
       <div ref={triggerRef} className="projects-list">
-        {projectImages.map((project) => (
-          <div key={project.id} className="project-card">
+        <div className="project-carousel">
+          <button
+            className="project-arrow project-arrow-left"
+            onClick={() => changeProject("prev")}
+            aria-label="Previous project"
+          >
+            ‹
+          </button>
+
+          <div ref={cardRef} className="project-card">
             <h2 className="project-title">
               <span
                 className={`project-title-link ${
-                  !project.youtube ? "project-disabled" : ""
+                  !currentProject.youtube ? "project-disabled" : ""
                 }`}
                 onClick={() => {
-                  if (project.youtube) window.open(project.youtube, "_blank");
+                  if (currentProject.youtube) {
+                    window.open(currentProject.youtube, "_blank");
+                  }
                 }}
               >
-                {project.title}
+                {currentProject.title}
               </span>
 
               <FaGithub
                 className={`project-github-icon ${
-                  theme === "dark" ? "project-github-dark" : "project-github-light"
-                } ${project.gitHub ? "" : "project-disabled"}`}
+                  theme === "dark"
+                    ? "project-github-dark"
+                    : "project-github-light"
+                } ${currentProject.gitHub ? "" : "project-disabled"}`}
                 onClick={() => {
-                  if (project.gitHub) window.open(project.gitHub, "_blank");
+                  if (currentProject.gitHub) {
+                    window.open(currentProject.gitHub, "_blank");
+                  }
                 }}
               />
             </h2>
 
             <div className="project-image-wrapper">
               <button
-                onClick={() => handleOverlayToggle(project.id)}
+                onClick={() => handleOverlayToggle(currentProject.id)}
                 className="project-overlay-btn"
                 aria-label="Toggle overlay"
               >
@@ -296,35 +344,45 @@ const Project = ({ theme }) => {
 
               <img
                 className={`project-image ${
-                  activeOverlay[project.id] ? "project-hidden" : "project-visible"
+                  activeOverlay[currentProject.id]
+                    ? "project-hidden"
+                    : "project-visible"
                 }`}
-                src={project.imageSrc}
-                alt="Project-img"
+                src={currentProject.imageSrc}
+                alt={currentProject.title}
               />
 
               <img
                 className={`project-overlay-image ${
-                  activeOverlay[project.id] ? "project-visible" : "project-hidden"
+                  activeOverlay[currentProject.id]
+                    ? "project-visible"
+                    : "project-hidden"
                 }`}
                 src={theme === "dark" ? "/Overlay_dark.png" : "/Overlay.png"}
-                alt="Overlay-img"
+                alt="Overlay"
               />
 
-              {activeOverlay[project.id] && (
+              {activeOverlay[currentProject.id] && (
                 <div className="project-overlay-content">
                   <h3
-                    ref={(el) => (overlayTitleRefs.current[project.id] = el)}
+                    ref={(el) =>
+                      (overlayTitleRefs.current[currentProject.id] = el)
+                    }
                     className={`project-overlay-title ${
-                      project.id !== 1 ? "project-overlay-title-spaced" : ""
+                      currentProject.id !== 1
+                        ? "project-overlay-title-spaced"
+                        : ""
                     }`}
                   >
-                    {project.overlayTitle}
+                    {currentProject.overlayTitle}
                   </h3>
 
-                  {project.id === 1 && (
+                  {currentProject.id === 1 && (
                     <p
                       ref={(el) =>
-                        (overlayTextRefs.current[`specialText${project.id}`] = el)
+                        (overlayTextRefs.current[
+                          `specialText${currentProject.id}`
+                        ] = el)
                       }
                       className="project-special-text"
                     >
@@ -333,11 +391,13 @@ const Project = ({ theme }) => {
                   )}
 
                   <div
-                    ref={(el) => (overlayTextRefs.current[project.id] = el)}
+                    ref={(el) =>
+                      (overlayTextRefs.current[currentProject.id] = el)
+                    }
                     className="project-overlay-text"
                   >
                     <ul>
-                      {project.overlayDescription.map((item, idx) => (
+                      {currentProject.overlayDescription.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
                     </ul>
@@ -347,12 +407,20 @@ const Project = ({ theme }) => {
             </div>
 
             <div className="project-tags">
-              {project.overlayTags.map((tag, i) => (
+              {currentProject.overlayTags.map((tag, i) => (
                 <span key={i}>{tag}</span>
               ))}
             </div>
           </div>
-        ))}
+
+          <button
+            className="project-arrow project-arrow-right"
+            onClick={() => changeProject("next")}
+            aria-label="Next project"
+          >
+            ›
+          </button>
+        </div>
       </div>
     </section>
   );
