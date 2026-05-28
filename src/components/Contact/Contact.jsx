@@ -1,6 +1,7 @@
-import "./Contact.css"
+import "./Contact.css";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 
-const Contact = ({ openContactForm }) => {
+const Contact = () => {
   return (
     <section id="Contact" className="contact-section">
       <p className="contact-subtitle">Get In Touch</p>
@@ -13,11 +14,29 @@ const Contact = ({ openContactForm }) => {
         want to say hi, I'll try my best to get back to you!
       </p>
 
-      <button onClick={openContactForm} className="contact-btn">
-        Contact Me
-      </button>
-    </section>
-  )
-}
+      <div className="contact-links">
+        <a
+          href="mailto:mohammadalimahdi26@gmail.com"
+          className="contact-card"
+          aria-label="Email"
+        >
+          <FaEnvelope />
+          <span>Email</span>
+        </a>
 
-export default Contact
+        <a
+          href="https://www.linkedin.com/in/mohammad-mahdi-57918032b/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-card"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin />
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

@@ -8,24 +8,23 @@
 /* Creates a 'dark' variant that works when an element or its ancestor has the .dark class */
 @custom-variant dark (&:where(.dark, .dark *));
 
-
-/* ---------------------------------- */
-/* 4️⃣ Global styles                    */
-/* Apply Manrope font and medium weight to every element on the page */
-
-/* 4️⃣ Custom font import */
-@font-face {
-  font-family: "GothicFont";
-  src: url("./Fonts/GothicFont.otf") format("opentype");
-  font-weight: 500; /* optional */
-}
-
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
 }
 
-html, body, div, section, header, footer, main {
+html,
+body,
+div,
+section,
+header,
+footer,
+main {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -38,12 +37,9 @@ html, body, div, section, header, footer, main {
   height: 100vh;
 }
 
-* {
-  font-family: "GothicFont", sans-serif;
-}
-
-/* Default light background */
+/* Default light background + global font */
 body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   @apply bg-white text-black;
 }
 
@@ -56,17 +52,11 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 /* ---------------------------------- */
 /* 5️⃣ Theme variables                  */
-/* Define a custom CSS variable for your primary color */
 @theme {
-  --color-primary: #5044E5; /* Primary brand color that can be reused */
+  --color-primary: #5044E5;
   --color-button: #A7A6A1;
   --color-darkNav: #27272b;
   --color-darkBack: #1b1b1b;
 }
-
-
-
