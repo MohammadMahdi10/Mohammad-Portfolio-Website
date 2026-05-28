@@ -60,23 +60,40 @@
   font-size: 1rem;
 }
 
-.intro-btn {
+.intro-contact-link {
   margin-top: 1.5rem;
-  padding: 0.5rem 1.5rem;
-  color: black;
-  cursor: pointer;
-  transition: 0.3s;
-  border: 0.16rem solid black;
-  width: 9.25rem;
-  height: 2.75rem;
-  background: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+
+  padding: 0.85rem 1.6rem;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #e07a7f, #ec4899);
+  color: white;
+
   font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 2px 8px rgba(224, 122, 127, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, gap 0.3s ease;
 }
 
-.intro-btn:hover {
-  background: black;
-  color: white;
-  border-color: black;
+.intro-contact-link svg {
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.intro-contact-link:hover {
+  transform: translateY(-3px);
+  gap: 1rem;
+  box-shadow: 0 14px 30px rgba(224, 122, 127, 0.35);
+}
+
+.intro-contact-link:hover svg {
+  transform: translateX(4px);
 }
 
 .dark .intro-wrapper {
@@ -103,15 +120,13 @@
   color: #d1d5db;
 }
 
-.dark .intro-btn {
-  color: white;
-  border-color: white;
+.dark .intro-contact-link {
+  background: linear-gradient(135deg, #3b5ba9, #5677c8);
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.2);
 }
 
-.dark .intro-btn:hover {
-  background: white;
-  color: black;
-  border-color: white;
+.dark .intro-contact-link:hover {
+  box-shadow: 0 12px 28px rgba(96, 165, 250, 0.35);
 }
 
 @media (min-width: 768px) {

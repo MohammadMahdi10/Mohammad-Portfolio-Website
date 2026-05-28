@@ -1,7 +1,8 @@
 import assets from "../../assets/assets";
+import { FaArrowRight } from "react-icons/fa";
 import "./Intro.css";
 
-const Intro = ({ openContactForm }) => {
+const Intro = () => {
   return (
     <div id="Home" className="intro-wrapper">
       <div className="intro-section">
@@ -26,9 +27,10 @@ const Intro = ({ openContactForm }) => {
               systems and dynamic web applications.
             </p>
 
-            <button onClick={openContactForm} className="intro-btn">
-              Contact Me
-            </button>
+            <a href="#Contact" className="intro-contact-link">
+              <span>Contact Me</span>
+              <FaArrowRight />
+            </a>
           </div>
         </div>
       </div>
