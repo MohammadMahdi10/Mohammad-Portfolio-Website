@@ -15,8 +15,9 @@ const experiences = {
       description:
         "Supporting Year-1 labs (programming, debugging, tooling, documentation), explaining core CS concepts and best practices to students.",
       bullets: [
-        "Professional and Research Practice Module",
-        "Information Systems Analysis Module",
+        "Supported 200+ students during lab sesssions",
+        "Helped and marked 50+ lab reports and presentations",
+        "Provided real time feedback to students to improve their understanding",
       ],
       icon: BriefcaseIcon,
     },
@@ -24,29 +25,15 @@ const experiences = {
       title: "AI Evaluator - Outlier",
       date: "January 2025 - Present",
       description:
-        "In this role, I evaluate and rate responses from multiple AI models based on prompts, assessing clarity, correctness, and alignment with task objectives.",
+        "Evaluated and rated responses from multiple AI models based on prompts, assessing clarity, correctness, and alignment with task objectives.",
       bullets: [
-        "Reviewed AI outputs and identified logical errors",
-        "Provided detailed feedback to users",
-        "Collaborated to refine answers for consistency",
+        "Evaluated AI-generated responses for accuracy, reasoning, and quality",
+        "Improved 90% of reviewed AI responses to meet evaluation criteria",
+        "Applied quality guidelines to identify logical and instruction following errors",
       ],
       icon: BriefcaseIcon,
     },
-  ],
-  2023: [
-    {
-      title: "Virtual Work Experience Trainee - Springpod",
-      date: "February 2023 - February 2023",
-      description:
-        "I built a strong foundation in core technology concepts and essential industry skills.",
-      bullets: [
-        "Participated in interactive exercises",
-        "Attended live webinars with professionals",
-        "Applied learned concepts to practical scenarios",
-      ],
-      icon: BriefcaseIcon,
-    },
-  ],
+  ]
 };
 
 const RevealCard = ({ children, delay = 0 }) => {
@@ -171,7 +158,7 @@ const Experience = () => {
                             </p>
 
                             <p className="experience-gained-title">
-                              What I Gained:
+                              Achievements:
                             </p>
 
                             {exp.bullets && (
