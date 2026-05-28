@@ -36,7 +36,7 @@ const App = () => {
       <Navbar theme={theme} setTheme={setTheme} contactFormOpen={contactFormOpen} openContactForm={openContactForm} closeContactForm={closeContactForm}/>
       <Intro openContactForm={openContactForm}/>
       <About/>
-      <Experience/>
+      <Experience theme={theme} />
       <Education/>
       <Project theme={theme} setTheme={setTheme}/>
       <Contact openContactForm={openContactForm}/>

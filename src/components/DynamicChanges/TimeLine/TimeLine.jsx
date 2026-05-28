@@ -1,14 +1,33 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./TimeLine.css";
 
+const getInitialDarkMode = () => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+    return savedTheme === "dark";
+  }
+
+  return document.documentElement.classList.contains("dark");
+};
+
 const TimeLine = () => {
   const containerRef = useRef(null);
   const [lineHeight, setLineHeight] = useState(0);
-  const [isDark, setIsDark] = useState(
-    document.documentElement.classList.contains("dark")
-  );
+  const [isDark, setIsDark] = useState(getInitialDarkMode);
 
   useEffect(() => {
+    const updateTheme = () => {
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme) {
+        setIsDark(savedTheme === "dark");
+        return;
+      }
+
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+
     const handleScroll = () => {
       const container = containerRef.current;
       if (!container) return;
@@ -30,9 +49,9 @@ const TimeLine = () => {
       setLineHeight(progress);
     };
 
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains("dark"));
-    });
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
 
     observer.observe(document.documentElement, {
       attributes: true,
@@ -41,6 +60,7 @@ const TimeLine = () => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
+    window.addEventListener("storage", updateTheme);
 
     handleScroll();
 
@@ -48,6 +68,7 @@ const TimeLine = () => {
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("storage", updateTheme);
     };
   }, []);
 
