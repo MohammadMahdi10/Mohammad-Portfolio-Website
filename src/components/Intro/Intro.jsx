@@ -1,40 +1,36 @@
-import assets from "../../assets/assets";
 import { FaArrowRight } from "react-icons/fa";
 import "./Intro.css";
 
 const Intro = () => {
   return (
-    <div id="Home" className="intro-wrapper">
+    <section id="Home" className="intro-wrapper">
       <div className="intro-section">
         <div className="intro-content">
-          <div className="intro-image-container">
-            <img
-              className="intro-image"
-              src={assets.Mo_Face}
-              alt="About me"
-            />
-          </div>
-
           <div className="intro-text">
-            <h1 className="intro-greeting">Hey There!</h1>
-
-            <h1 className="intro-name">My name is Mohammad Mahdi.</h1>
-
-            <hr />
-
-            <p>
-              Future Software Engineer passionate about building intelligent
-              systems and dynamic web applications.
+            <p className="intro-heading">
+              Hey There! My name is
             </p>
 
-            <a href="#Contact" className="intro-contact-link">
-              <span>Contact Me</span>
-              <FaArrowRight />
-            </a>
+            <h1 className="intro-name">
+              Mohammad Mahdi
+            </h1>
+
+            <p className="intro-description">
+              Enthusiastic about software engineering, full stack web applications
+              and problem solving. Constantly learning new technologies to build
+              efficient solutions.
+            </p>
+
+            <div className="intro-buttons">
+              <a href="#Projects" className="intro-primary-btn">
+                View Projects
+                <FaArrowRight />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

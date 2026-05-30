@@ -5,94 +5,96 @@
 
 .intro-section {
   background: #fbf7f6;
-  padding: 2rem;
   min-height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .intro-content {
+  width: 100%;
+  max-width: 75rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 3rem;
-  padding: 4rem 2rem;
-}
+  align-items: center;
 
-.intro-image-container {
-  flex-shrink: 0;
-}
-
-.intro-image {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 999px;
-  object-fit: cover;
-  border: 4px solid black;
+  margin-top: -3rem;
 }
 
 .intro-text {
-  max-width: 32rem;
   text-align: center;
+  max-width: 52rem;
 }
 
-.intro-greeting {
-  font-size: 1.25rem;
-  font-weight: 600;
+.intro-heading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
 }
 
 .intro-name {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: #111827;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
 }
 
-.intro-text hr {
-  margin-top: 0.75rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 66.666%;
-  border-color: #e5e7eb;
+.intro-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #4b5563;
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
 }
 
-.intro-text p {
-  margin-top: 1.5rem;
-  color: #374151;
-  width: 100%;
-  font-size: 1rem;
+.intro-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.intro-contact-link {
-  margin-top: 1.5rem;
+.intro-primary-btn,
+.intro-secondary-btn {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.intro-primary-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.75rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 10px;
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
   background: linear-gradient(135deg, #e07a7f, #ec4899);
   color: white;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(224, 122, 127, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, gap 0.3s ease;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.18);
 }
 
-.intro-contact-link svg {
-  font-size: 0.95rem;
-  transition: transform 0.3s ease;
-}
-
-.intro-contact-link:hover {
+.intro-primary-btn:hover {
   transform: translateY(-3px);
-  gap: 1rem;
-  box-shadow: 0 14px 30px rgba(224, 122, 127, 0.35);
+  box-shadow: 0 10px 24px rgba(236, 72, 153, 0.25);
 }
 
-.intro-contact-link:hover svg {
-  transform: translateX(4px);
+.intro-secondary-btn {
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  background: white;
+}
+
+.intro-secondary-btn:hover {
+  background: #f9fafb;
+  transform: translateY(-2px);
 }
 
 .dark .intro-wrapper {
@@ -103,70 +105,58 @@
   background: #161e2e;
 }
 
-.dark .intro-image {
-  border-color: white;
+.dark .intro-heading {
+  color: #9ca3af;
 }
 
 .dark .intro-name {
   color: white;
 }
 
-.dark .intro-text hr {
-  border-color: white;
-}
-
-.dark .intro-text p {
+.dark .intro-description {
   color: #d1d5db;
 }
 
-.dark .intro-contact-link {
+.dark .intro-primary-btn {
   background: linear-gradient(135deg, #3b5ba9, #5677c8);
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.2);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.18);
 }
 
-.dark .intro-contact-link:hover {
-  box-shadow: 0 12px 28px rgba(96, 165, 250, 0.35);
+.dark .intro-primary-btn:hover {
+  box-shadow: 0 10px 24px rgba(96, 165, 250, 0.25);
 }
 
-@media (min-width: 768px) {
-  .intro-content {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 90rem;
-    margin-left: auto;
-    margin-right: 18rem;
-  }
+.dark .intro-secondary-btn {
+  background: transparent;
+  border-color: #374151;
+  color: white;
+}
 
-  .intro-image {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 0;
-    border: none;
-  }
+.dark .intro-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
 
-  .intro-text {
-    text-align: left;
-  }
-
-  .intro-greeting {
-    font-size: 1.2rem;
-    font-weight: 400;
+@media (max-width: 768px) {
+  .intro-heading {
+    font-size: 1rem;
   }
 
   .intro-name {
-    font-size: 2.25rem;
-    width: 50rem;
+    font-size: 3rem;
   }
 
-  .intro-text hr {
-    margin-left: 0;
-    margin-right: 0;
-    width: 37.5rem;
+  .intro-description {
+    font-size: 1rem;
   }
 
-  .intro-text p {
-    width: 51rem;
+  .intro-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .intro-primary-btn,
+  .intro-secondary-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

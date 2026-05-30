@@ -7,7 +7,7 @@ import "./Navbar.css";
 const Navbar = ({ theme, setTheme }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const navLinks = ["Home", "About", "Experience", "Education", "Projects"];
+  const navLinks = ["Home", "About", "Experience", "Education", "Projects", "Contact"];
 
   return (
     <div className="navbar">
