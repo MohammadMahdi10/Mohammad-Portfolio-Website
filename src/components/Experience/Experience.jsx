@@ -15,7 +15,7 @@ const experiences = {
       description:
         "Supporting Year-1 labs (programming, debugging, tooling, documentation), explaining core CS concepts and best practices to students.",
       bullets: [
-        "Supported 200+ students during lab sesssions",
+        "Supported 200+ students during lab sessions",
         "Helped and marked 50+ lab reports and presentations",
         "Provided real time feedback to students to improve their understanding",
       ],

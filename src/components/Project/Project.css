@@ -233,33 +233,64 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 60;
-  width: 3rem;
-  height: 3rem;
+
+  width: 3.25rem;
+  height: 3.25rem;
+
   border-radius: 999px;
-  border: none;
-  background: rgba(28, 37, 65, 0.85);
-  color: white;
-  font-size: 2.5rem;
+  border: 1px solid rgba(28, 37, 65, 0.15);
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #1c2541;
+
+  font-size: 2.25rem;
   line-height: 1;
+
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 0.25rem;
-  transition: transform 0.25s ease, background 0.25s ease;
+
+  padding-bottom: 0.2rem;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 0 1px rgba(28, 37, 65, 0.08),
+    0 8px 24px rgba(28, 37, 65, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .project-arrow:hover {
-  transform: translateY(-50%) scale(1.1);
-  background: rgba(28, 37, 65, 1);
+  transform: translateY(-50%) scale(1.08);
+
+  background: rgba(255, 255, 255, 0.95);
+  color: #1c2541;
+
+  border-color: rgba(236, 72, 153, 0.35);
+
+  box-shadow:
+    0 0 0 4px rgba(236, 72, 153, 0.08),
+    0 12px 30px rgba(236, 72, 153, 0.18);
+}
+
+.project-arrow:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .project-arrow-left {
-  left: -0.5rem;
+  left: -0.75rem;
 }
 
 .project-arrow-right {
-  right: -0.5rem;
+  right: -0.75rem;
 }
 
 .dark .projects-section {
@@ -285,11 +316,26 @@
 }
 
 .dark .project-arrow {
-  background: rgba(59, 130, 246, 0.85);
+  background: rgba(31, 41, 55, 0.9);
+  border-color: rgba(96, 165, 250, 0.15);
+  color: #e5e7eb;
+
+  box-shadow:
+    0 0 0 1px rgba(96, 165, 250, 0.05),
+    0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .dark .project-arrow:hover {
-  background: rgba(59, 130, 246, 1);
+  transform: translateY(-50%) scale(1.08);
+
+  background: rgba(31, 41, 55, 0.95);
+  color: white;
+
+  border-color: rgba(96, 165, 250, 0.35);
+
+  box-shadow:
+    0 0 0 4px rgba(96, 165, 250, 0.1),
+    0 12px 30px rgba(96, 165, 250, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -334,9 +380,9 @@
   }
 
   .project-arrow {
-    width: 2.4rem;
-    height: 2.4rem;
-    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.8rem;
   }
 
   .project-arrow-left {
