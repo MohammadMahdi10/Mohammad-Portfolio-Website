@@ -22,11 +22,21 @@ const Project = ({ theme }) => {
       imageSrc: "/ReactPortfolio.png",
       overlayTitle: "Modern Portfolio Website",
       overlayDescription: [
-        "Responsive Design: Built with React and Tailwind CSS for a modern, fast, and mobile-friendly user experience.",
-        "Component-Based Architecture: Modular React components make the website easy to maintain and extend.",
-        "Interactive Features: Smooth animations, hover effects, and dynamic content enhance user engagement.",
-        "State Management: Uses React state and props to manage interactive elements efficiently.",
-        "Showcases Technical Skills: Highlights projects, coding abilities, and personal achievements.",
+        <>
+          <strong>Responsive Design:</strong> Built with React and Tailwind CSS for a modern, fast, and mobile-friendly user experience.
+        </>,
+        <>
+          <strong>Component-Based Architecture:</strong> Modular React components make the website easy to maintain and extend.
+        </>,
+        <>
+          <strong>Interactive Features:</strong> Smooth animations, hover effects, and dynamic content enhance user engagement.
+        </>,
+        <>
+          <strong>State Management:</strong> Uses React state and props to manage interactive elements efficiently.
+        </>,
+        <>
+          <strong>Showcases Technical Skills:</strong> Highlights projects, coding abilities, and personal achievements.
+        </>,
       ],
       overlayTags: [
         "React",
@@ -44,11 +54,21 @@ const Project = ({ theme }) => {
       imageSrc: "/Tales of the Dungeon.png",
       overlayTitle: "2D Dungeon Crawler Game",
       overlayDescription: [
-        "Objective-Based Progression: Players must complete specific goals in the game.",
-        "Enemy Encounters: Engage in combat with enemies in each level, requiring players to strategise combat and resource management.",
-        "Boss Battles: Each dungeon, at the end, culminates in a powerful boss fight, testing the player's skills.",
-        "Dungeon Exploration: Players navigate through a map and can collect coins and potions.",
-        "Replayability: Randomized dungeon layouts and enemy placements keep each run fresh and challenging.",
+        <>
+          <strong>Objective-Based Progression:</strong> Players must complete specific goals in the game.
+        </>,
+        <>
+          <strong>Enemy Encounters:</strong> Engage in combat with enemies in each level, requiring players to strategise combat and resource management.
+        </>,
+        <>
+          <strong>Boss Battles:</strong> Each dungeon, at the end, culminates in a powerful boss fight, testing the player's skills.
+        </>,
+        <>
+          <strong>Dungeon Exploration:</strong> Players navigate through a map and can collect coins and potions.
+        </>,
+        <>
+          <strong>Replayability:</strong> Randomized dungeon layouts and enemy placements keep each run fresh and challenging.
+        </>,
       ],
       overlayTags: ["Godot", "GDScript", "2D Game"],
       youtube: "https://www.youtube.com/watch?v=HXmxu-tvXWY",
@@ -60,12 +80,24 @@ const Project = ({ theme }) => {
       imageSrc: "/Cosmic Showdown.png",
       overlayTitle: "Hack and Slash Game",
       overlayDescription: [
-        "Dynamic Combat: Enemies track and attack the player, and the player can attack enemies using strategic moves.",
-        "Item Collection & In-Game Shop: Players can collect coins or points to purchase potions for healing or speed boosts.",
-        "Multiple Enemy Types: Three enemy types with different difficulty levels to increase game challenge.",
-        "Parallax Background & Platforming: Multi-layered scrolling background and platforms allow climbing and navigation.",
-        "Audio Controls: Players can adjust music and sound effect volumes for a personalised experience.",
-        "Enhanced Gameplay Mechanics: Combines real-time combat, collectibles, and level design for engaging gameplay.",
+        <>
+          <strong>Dynamic Combat:</strong> Enemies track and attack the player, and the player can attack enemies using strategic moves.
+        </>,
+        <>
+          <strong>Item Collection & In-Game Shop:</strong> Players can collect coins or points to purchase potions for healing or speed boosts.
+        </>,
+        <>
+          <strong>Multiple Enemy Types:</strong> Three enemy types with different difficulty levels to increase game challenge.
+        </>,
+        <>
+          <strong>Parallax Background & Platforming:</strong> Multi-layered scrolling background and platforms allow climbing and navigation.
+        </>,
+        <>
+          <strong>Audio Controls:</strong> Players can adjust music and sound effect volumes for a personalised experience.
+        </>,
+        <>
+          <strong>Enhanced Gameplay Mechanics:</strong> Combines real-time combat, collectibles, and level design for engaging gameplay.
+        </>,
       ],
       overlayTags: [
         "Python",
@@ -84,11 +116,21 @@ const Project = ({ theme }) => {
       imageSrc: "/Mohammad Full Stack Portfolio.png",
       overlayTitle: "Full Stack Portfolio Website",
       overlayDescription: [
-        "Responsive Design: Built with HTML, CSS, and JavaScript to ensure smooth user experience across devices.",
-        "Secure Login System: Users can register and log in safely, with session management handled in PHP.",
-        "Dynamic Content: Blog posts and user data are stored and retrieved from a MySQL database.",
-        "Server-Hosted: Runs on Apache server using XAMPP for local development and testing.",
-        "Showcases Technical Skills: Highlights projects, coding abilities, and personal achievements.",
+        <>
+          <strong>Responsive Design:</strong> Built with HTML, CSS, and JavaScript to ensure smooth user experience across devices.
+        </>,
+        <>
+          <strong>Secure Login System:</strong> Users can register and log in safely, with session management handled in PHP.
+        </>,
+        <>
+          <strong>Dynamic Content:</strong> Blog posts and user data are stored and retrieved from a MySQL database.
+        </>,
+        <>
+          <strong>Server-Hosted:</strong> Runs on Apache server using XAMPP for local development and testing.
+        </>,
+        <>
+          <strong>Showcases Technical Skills:</strong> Highlights projects, coding abilities, and personal achievements.
+        </>,
       ],
       overlayTags: ["HTML5", "CSS3", "JavaScript", "PHP", "Full Stack", "Apache"],
       youtube: "https://www.youtube.com/watch?v=WEIp9WuFg2s",
@@ -100,12 +142,24 @@ const Project = ({ theme }) => {
       imageSrc: "/Horse.png",
       overlayTitle: "Dynamic Horse Racing Experience",
       overlayDescription: [
-        "Java-based simulation using OOP principles and JFrame for GUI development.",
-        "Customizable Race Tracks: Users can create tracks with different conditions (normal, icy, rainy) which dynamically affect horse speeds.",
-        "Horse Customization: Multiple horse breeds, colors, and saddles, all influencing performance attributes like speed.",
-        "Dynamic Racing: Each horse progresses in real-time based on individual stats and track conditions.",
-        "Statistics & Comparisons: Horse performance stats are tracked, saved, and can be compared across races.",
-        "Version Control: Project source code and updates are maintained on GitHub for version tracking.",
+        <>
+          Java-based Simulation uses <strong>OOP principles</strong> and JFrame for GUI development.
+        </>,
+        <>
+          <strong>Customizable Race Tracks:</strong> Users can create tracks with different conditions (normal, icy, rainy) which dynamically affect horse speeds.
+        </>,
+        <>
+          <strong>Horse Customization:</strong> Multiple horse breeds, colors, and saddles, all influencing performance attributes like speed.
+        </>,
+        <>
+          <strong>Dynamic Racing:</strong> Each horse progresses in real-time based on individual stats and track conditions.
+        </>,
+        <>
+          <strong>Statistics & Comparisons:</strong> Horse performance stats are tracked, saved, and can be compared across races.
+        </>,
+        <>
+          <strong>Version Control:</strong> Project source code and updates are maintained on GitHub for version tracking.
+        </>,
       ],
       overlayTags: [
         "Java",
