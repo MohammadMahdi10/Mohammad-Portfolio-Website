@@ -1,5 +1,5 @@
 import "./Contact.css";
-import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -9,9 +9,9 @@ const Contact = () => {
       <h1>Let's Work Together</h1>
 
       <p className="contact-description">
-        I'm open for new opportunities – especially ambitious or large projects.
-        However, my inbox is always open. Whether you have a question or just
-        want to say hi, I'll try my best to get back to you!
+        I'm open to new opportunities and exciting projects. Whether you have a
+        question, an idea you'd like to discuss, or simply want to connect, feel
+        free to reach out.
       </p>
 
       <div className="contact-links">
@@ -33,6 +33,17 @@ const Contact = () => {
         >
           <FaLinkedin />
           <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="/Mo CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-card"
+          aria-label="Download CV"
+        >
+          <FaFileAlt />
+          <span>CV</span>
         </a>
       </div>
     </section>
