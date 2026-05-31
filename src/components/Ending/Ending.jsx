@@ -47,7 +47,7 @@ const Ending = () => {
             <FaLinkedin size={26} />
           </a>
 
-          <a href="/Mo CV.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="Mohammad_CV_2026.pdf" target="_blank" rel="noopener noreferrer">
             <FaFileAlt size={24} />
           </a>
         </div>
