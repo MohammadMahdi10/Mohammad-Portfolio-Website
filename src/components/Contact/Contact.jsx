@@ -36,7 +36,7 @@ const Contact = () => {
         </a>
 
         <a
-          href="/Mo CV.pdf"
+          href="Mohammad_CV_2026.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-card"
