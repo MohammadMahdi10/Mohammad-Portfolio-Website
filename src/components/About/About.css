@@ -15,14 +15,14 @@
 
 .about-container h1 {
   color: #ec4899;
-  font-size: 3rem;
+  font-size: clamp(2.25rem, 6vw, 3rem);
   font-weight: 700;
   margin-bottom: 2rem;
 }
 
 .about-description {
   text-align: center;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   line-height: 2;
   max-width: 56rem;
   color: #6b7280;
@@ -40,7 +40,7 @@
 }
 
 .about-skills h2 {
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
   font-weight: 700;
   color: #111827;
   margin-bottom: 2rem;
@@ -52,6 +52,7 @@
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .skill-group-wrapper {
@@ -170,12 +171,17 @@
 }
 
 @media (max-width: 768px) {
-  .about-container h1 {
-    font-size: 2.5rem;
+  .about-section {
+    padding: 0 1.25rem;
+    scroll-margin-top: 6rem;
+  }
+
+  .about-container {
+    margin-bottom: 5rem;
   }
 
   .about-description {
-    font-size: 1rem;
+    line-height: 1.8;
   }
 
   .skills-slider {
@@ -190,5 +196,54 @@
     width: 2.4rem;
     height: 2.4rem;
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    margin-top: 4rem;
+    padding: 0 1rem;
+  }
+
+  .about-container h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-description {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    margin-left: 0.5rem;
+  }
+
+  .about-skills {
+    margin-top: 1.5rem;
+  }
+
+  .about-skills h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-slider {
+    gap: 0.5rem;
+  }
+
+  .skill-group-wrapper {
+    min-width: 11rem;
+  }
+
+  .skills-list {
+    gap: 0.5rem;
+  }
+
+  .skill-item {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .skills-arrow {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.35rem;
   }
 }
