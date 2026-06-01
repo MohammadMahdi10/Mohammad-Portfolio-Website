@@ -10,13 +10,35 @@
 
 .typewriter-main {
   color: #ec4899;
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.1;
   display: block;
   margin-top: 0.5rem;
+  word-break: keep-all;
 }
 
 .dark .typewriter-main {
   color: #60a5fa;
+}
+
+@media (max-width: 768px) {
+  .typewriter-main {
+    font-size: clamp(2.25rem, 10vw, 4.5rem);
+  }
+
+  .typewriter-cursor {
+    border-right-width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-main {
+    font-size: 3.2rem;
+  }
+
+  .typewriter-cursor {
+    border-right-width: 2px;
+  }
 }
 
 @keyframes blink {
