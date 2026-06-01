@@ -37,3 +37,17 @@
     left: 8rem;
   }
 }
+
+@media (max-width: 767px) {
+  .timeline-base-line,
+  .timeline-progress-line {
+    left: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-base-line,
+  .timeline-progress-line {
+    left: 0.42rem;
+  }
+}

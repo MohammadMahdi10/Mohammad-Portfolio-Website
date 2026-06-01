@@ -4,8 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
-  padding-bottom: 5rem;
+  padding: 3rem 1rem 5rem;
   margin-top: 5rem;
   scroll-margin-top: 5rem;
 }
@@ -20,7 +19,7 @@
 }
 
 .experience-title {
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
   font-weight: 700;
   color: black;
   text-align: center;
@@ -47,8 +46,6 @@
 
 .experience-content {
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 5;
 }
@@ -89,7 +86,7 @@
 .experience-cards {
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 100%;
   max-width: 32rem;
   gap: 2rem;
   padding-left: 2.5rem;
@@ -148,7 +145,7 @@
 }
 
 .experience-card-content h3 {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
   font-weight: 600;
 }
 
@@ -161,6 +158,7 @@
 .experience-description {
   color: #374151;
   margin-top: 0.5rem;
+  line-height: 1.6;
 }
 
 .experience-gained-title {
@@ -178,6 +176,7 @@
 
 .experience-bullets li {
   margin-bottom: 0.25rem;
+  line-height: 1.6;
 }
 
 .dark .experience-section {
@@ -228,10 +227,6 @@
     padding-bottom: 6rem;
   }
 
-  .experience-title {
-    font-size: 3rem;
-  }
-
   .experience-title-line {
     margin-bottom: 6.25rem;
   }
@@ -255,8 +250,76 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .experience-title {
-    font-size: 3.75rem;
+@media (max-width: 767px) {
+  .experience-section {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .experience-title-container {
+    margin-top: 3rem;
+  }
+
+  .experience-timeline-wrapper {
+    margin-top: 4rem;
+  }
+
+  .experience-year-header {
+    padding-left: 3rem;
+  }
+
+  .experience-year-dot {
+    left: 1.25rem;
+  }
+
+  .experience-cards {
+    max-width: 100%;
+    padding-left: 2.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .experience-card {
+    padding: 1.25rem;
+  }
+
+  .experience-icon-box {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .experience-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .experience-year-header {
+    padding-left: 1.5rem;
+  }
+
+  .experience-year-dot {
+    left: 0.03rem;
+  }
+
+  .experience-year {
+    font-size: 1.25rem;
+  }
+
+  .experience-cards {
+    padding-left: 1.75rem;
+  }
+
+  .experience-card {
+    padding: 1rem;
+  }
+
+  .experience-description,
+  .experience-bullets li {
+    font-size: 0.95rem;
   }
 }
