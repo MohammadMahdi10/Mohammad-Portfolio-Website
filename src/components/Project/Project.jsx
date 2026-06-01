@@ -11,6 +11,8 @@ const Project = ({ theme }) => {
   const titleLineRef = useRef(null);
   const triggerRef = useRef(null);
   const cardRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const overlayTitleRefs = useRef({});
   const overlayTextRefs = useRef({});
@@ -23,19 +25,24 @@ const Project = ({ theme }) => {
       overlayTitle: "Modern Portfolio Website",
       overlayDescription: [
         <>
-          <strong>Responsive Design:</strong> Built with React and Tailwind CSS for a modern, fast, and mobile-friendly user experience.
+          <strong>Responsive Design:</strong> Built with React and Tailwind CSS
+          for a modern, fast, and mobile-friendly user experience.
         </>,
         <>
-          <strong>Component-Based Architecture:</strong> Modular React components make the website easy to maintain and extend.
+          <strong>Component-Based Architecture:</strong> Modular React
+          components make the website easy to maintain and extend.
         </>,
         <>
-          <strong>Interactive Features:</strong> Smooth animations, hover effects, and dynamic content enhance user engagement.
+          <strong>Interactive Features:</strong> Smooth animations, hover
+          effects, and dynamic content enhance user engagement.
         </>,
         <>
-          <strong>State Management:</strong> Uses React state and props to manage interactive elements efficiently.
+          <strong>State Management:</strong> Uses React state and props to
+          manage interactive elements efficiently.
         </>,
         <>
-          <strong>Showcases Technical Skills:</strong> Highlights projects, coding abilities, and personal achievements.
+          <strong>Showcases Technical Skills:</strong> Highlights projects,
+          coding abilities, and personal achievements.
         </>,
       ],
       overlayTags: [
@@ -55,19 +62,25 @@ const Project = ({ theme }) => {
       overlayTitle: "2D Dungeon Crawler Game",
       overlayDescription: [
         <>
-          <strong>Objective-Based Progression:</strong> Players must complete specific goals in the game.
+          <strong>Objective-Based Progression:</strong> Players must complete
+          specific goals in the game.
         </>,
         <>
-          <strong>Enemy Encounters:</strong> Engage in combat with enemies in each level, requiring players to strategise combat and resource management.
+          <strong>Enemy Encounters:</strong> Engage in combat with enemies in
+          each level, requiring players to strategise combat and resource
+          management.
         </>,
         <>
-          <strong>Boss Battles:</strong> Each dungeon, at the end, culminates in a powerful boss fight, testing the player's skills.
+          <strong>Boss Battles:</strong> Each dungeon, at the end, culminates in
+          a powerful boss fight, testing the player's skills.
         </>,
         <>
-          <strong>Dungeon Exploration:</strong> Players navigate through a map and can collect coins and potions.
+          <strong>Dungeon Exploration:</strong> Players navigate through a map
+          and can collect coins and potions.
         </>,
         <>
-          <strong>Replayability:</strong> Randomized dungeon layouts and enemy placements keep each run fresh and challenging.
+          <strong>Replayability:</strong> Randomized dungeon layouts and enemy
+          placements keep each run fresh and challenging.
         </>,
       ],
       overlayTags: ["Godot", "GDScript", "2D Game"],
@@ -81,22 +94,28 @@ const Project = ({ theme }) => {
       overlayTitle: "Hack and Slash Game",
       overlayDescription: [
         <>
-          <strong>Dynamic Combat:</strong> Enemies track and attack the player, and the player can attack enemies using strategic moves.
+          <strong>Dynamic Combat:</strong> Enemies track and attack the player,
+          and the player can attack enemies using strategic moves.
         </>,
         <>
-          <strong>Item Collection & In-Game Shop:</strong> Players can collect coins or points to purchase potions for healing or speed boosts.
+          <strong>Item Collection & In-Game Shop:</strong> Players can collect
+          coins or points to purchase potions for healing or speed boosts.
         </>,
         <>
-          <strong>Multiple Enemy Types:</strong> Three enemy types with different difficulty levels to increase game challenge.
+          <strong>Multiple Enemy Types:</strong> Three enemy types with
+          different difficulty levels to increase game challenge.
         </>,
         <>
-          <strong>Parallax Background & Platforming:</strong> Multi-layered scrolling background and platforms allow climbing and navigation.
+          <strong>Parallax Background & Platforming:</strong> Multi-layered
+          scrolling background and platforms allow climbing and navigation.
         </>,
         <>
-          <strong>Audio Controls:</strong> Players can adjust music and sound effect volumes for a personalised experience.
+          <strong>Audio Controls:</strong> Players can adjust music and sound
+          effect volumes for a personalised experience.
         </>,
         <>
-          <strong>Enhanced Gameplay Mechanics:</strong> Combines real-time combat, collectibles, and level design for engaging gameplay.
+          <strong>Enhanced Gameplay Mechanics:</strong> Combines real-time
+          combat, collectibles, and level design for engaging gameplay.
         </>,
       ],
       overlayTags: [
@@ -117,19 +136,24 @@ const Project = ({ theme }) => {
       overlayTitle: "Full Stack Portfolio Website",
       overlayDescription: [
         <>
-          <strong>Responsive Design:</strong> Built with HTML, CSS, and JavaScript to ensure smooth user experience across devices.
+          <strong>Responsive Design:</strong> Built with HTML, CSS, and
+          JavaScript to ensure smooth user experience across devices.
         </>,
         <>
-          <strong>Secure Login System:</strong> Users can register and log in safely, with session management handled in PHP.
+          <strong>Secure Login System:</strong> Users can register and log in
+          safely, with session management handled in PHP.
         </>,
         <>
-          <strong>Dynamic Content:</strong> Blog posts and user data are stored and retrieved from a MySQL database.
+          <strong>Dynamic Content:</strong> Blog posts and user data are stored
+          and retrieved from a MySQL database.
         </>,
         <>
-          <strong>Server-Hosted:</strong> Runs on Apache server using XAMPP for local development and testing.
+          <strong>Server-Hosted:</strong> Runs on Apache server using XAMPP for
+          local development and testing.
         </>,
         <>
-          <strong>Showcases Technical Skills:</strong> Highlights projects, coding abilities, and personal achievements.
+          <strong>Showcases Technical Skills:</strong> Highlights projects,
+          coding abilities, and personal achievements.
         </>,
       ],
       overlayTags: ["HTML5", "CSS3", "JavaScript", "PHP", "Full Stack", "Apache"],
@@ -143,22 +167,29 @@ const Project = ({ theme }) => {
       overlayTitle: "Dynamic Horse Racing Experience",
       overlayDescription: [
         <>
-          Java-based Simulation uses <strong>OOP principles</strong> and JFrame for GUI development.
+          Java-based Simulation uses <strong>OOP principles</strong> and JFrame
+          for GUI development.
         </>,
         <>
-          <strong>Customizable Race Tracks:</strong> Users can create tracks with different conditions (normal, icy, rainy) which dynamically affect horse speeds.
+          <strong>Customizable Race Tracks:</strong> Users can create tracks
+          with different conditions (normal, icy, rainy) which dynamically affect
+          horse speeds.
         </>,
         <>
-          <strong>Horse Customization:</strong> Multiple horse breeds, colors, and saddles, all influencing performance attributes like speed.
+          <strong>Horse Customization:</strong> Multiple horse breeds, colors,
+          and saddles, all influencing performance attributes like speed.
         </>,
         <>
-          <strong>Dynamic Racing:</strong> Each horse progresses in real-time based on individual stats and track conditions.
+          <strong>Dynamic Racing:</strong> Each horse progresses in real-time
+          based on individual stats and track conditions.
         </>,
         <>
-          <strong>Statistics & Comparisons:</strong> Horse performance stats are tracked, saved, and can be compared across races.
+          <strong>Statistics & Comparisons:</strong> Horse performance stats are
+          tracked, saved, and can be compared across races.
         </>,
         <>
-          <strong>Version Control:</strong> Project source code and updates are maintained on GitHub for version tracking.
+          <strong>Version Control:</strong> Project source code and updates are
+          maintained on GitHub for version tracking.
         </>,
       ],
       overlayTags: [
@@ -181,6 +212,10 @@ const Project = ({ theme }) => {
 
   const [activeOverlay, setActiveOverlay] = useState(initialOverlayState);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < 1024;
+  });
 
   const currentProject = projectImages[currentProjectIndex];
 
@@ -218,6 +253,40 @@ const Project = ({ theme }) => {
       },
     });
   };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeDistance = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(swipeDistance) < 50) return;
+
+    if (swipeDistance > 0) {
+      changeProject("next");
+    } else {
+      changeProject("prev");
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -349,14 +418,21 @@ const Project = ({ theme }) => {
       </div>
 
       <div ref={triggerRef} className="projects-list">
-        <div className="project-carousel">
-          <button
-            className="project-arrow project-arrow-left"
-            onClick={() => changeProject("prev")}
-            aria-label="Previous project"
-          >
-            ‹
-          </button>
+        <div
+          className="project-carousel"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {!isMobile && (
+            <button
+              className="project-arrow project-arrow-left"
+              onClick={() => changeProject("prev")}
+              aria-label="Previous project"
+            >
+              ‹
+            </button>
+          )}
 
           <div ref={cardRef} className="project-card">
             <h2 className="project-title">
@@ -467,17 +543,19 @@ const Project = ({ theme }) => {
             </div>
           </div>
 
-          <button
-            className="project-arrow project-arrow-right"
-            onClick={() => changeProject("next")}
-            aria-label="Next project"
-          >
-            ›
-          </button>
+          {!isMobile && (
+            <button
+              className="project-arrow project-arrow-right"
+              onClick={() => changeProject("next")}
+              aria-label="Next project"
+            >
+              ›
+            </button>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export default Project;
+export default Project; 
