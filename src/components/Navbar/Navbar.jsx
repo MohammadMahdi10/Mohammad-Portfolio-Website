@@ -9,10 +9,21 @@ const Navbar = ({ theme, setTheme }) => {
 
   const navLinks = ["Home", "About", "Experience", "Education", "Projects", "Contact"];
 
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setSidebarOpen(false);
+  };
+
   return (
     <div className="navbar">
       <h1 className="navbar-title">
-        <a href="#Home">Mohammad Sabur Ali Mahdi</a>
+        <button onClick={() => scrollToSection("Home")} className="navbar-title-btn">
+          Mohammad Sabur Ali Mahdi
+        </button>
       </h1>
 
       <div className={`navbar-links ${sidebarOpen ? "sidebar-open" : ""}`}>
@@ -20,13 +31,12 @@ const Navbar = ({ theme, setTheme }) => {
 
         {navLinks.map((link, index) => (
           <React.Fragment key={link}>
-            <a
-              onClick={() => setSidebarOpen(false)}
-              href={`#${link}`}
+            <button
+              onClick={() => scrollToSection(link)}
               className="navbar-link"
             >
               {link}
-            </a>
+            </button>
 
             {index !== navLinks.length - 1 && (
               <span className="navbar-divider">|</span>
