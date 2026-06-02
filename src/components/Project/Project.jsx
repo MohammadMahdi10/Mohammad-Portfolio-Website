@@ -380,7 +380,7 @@ const Project = ({ theme }) => {
     const specialTextEl =
       overlayTextRefs.current[`specialText${currentProject.id}`];
 
-    if (activeOverlay[currentProject.id]) {
+    if (activeOverlay[currentProject.id] && !isMobile) {
       if (titleEl) {
         gsap.fromTo(
           titleEl,
@@ -405,7 +405,7 @@ const Project = ({ theme }) => {
         );
       }
     }
-  }, [activeOverlay, currentProject.id]);
+  }, [activeOverlay, currentProject.id, isMobile]);
 
   return (
     <section ref={sectionRef} id="Projects" className="projects-section">
@@ -463,78 +463,100 @@ const Project = ({ theme }) => {
               />
             </h2>
 
-            <div className="project-image-wrapper">
-              <button
-                onClick={() => handleOverlayToggle(currentProject.id)}
-                className="project-overlay-btn"
-                aria-label="Toggle overlay"
-              >
-                <img src={assets.menu_icon} alt="Info" />
-              </button>
+            {isMobile ? (
+              <>
+                <p className="project-swipe-hint">
+                  Swipe to view more projects
+                </p>
 
-              <img
-                className={`project-image ${
-                  activeOverlay[currentProject.id]
-                    ? "project-hidden"
-                    : "project-visible"
-                }`}
-                src={currentProject.imageSrc}
-                alt={currentProject.title}
-              />
+                <div className="project-counter">
+                  {currentProjectIndex + 1} / {projectImages.length}
+                </div>
 
-              <img
-                className={`project-overlay-image ${
-                  activeOverlay[currentProject.id]
-                    ? "project-visible"
-                    : "project-hidden"
-                }`}
-                src={theme === "dark" ? "/Overlay_dark.png" : "/Overlay.png"}
-                alt="Overlay"
-              />
+                <div className="project-mobile-description">
+                  <h3>{currentProject.overlayTitle}</h3>
 
-              {activeOverlay[currentProject.id] && (
-                <div className="project-overlay-content">
-                  <h3
-                    ref={(el) =>
-                      (overlayTitleRefs.current[currentProject.id] = el)
-                    }
-                    className={`project-overlay-title ${
-                      currentProject.id !== 1
-                        ? "project-overlay-title-spaced"
-                        : ""
-                    }`}
-                  >
-                    {currentProject.overlayTitle}
-                  </h3>
-
-                  {currentProject.id === 1 && (
-                    <p
-                      ref={(el) =>
-                        (overlayTextRefs.current[
-                          `specialText${currentProject.id}`
-                        ] = el)
-                      }
-                      className="project-special-text"
-                    >
-                      The one you're currently viewing!
-                    </p>
-                  )}
-
-                  <div
-                    ref={(el) =>
-                      (overlayTextRefs.current[currentProject.id] = el)
-                    }
-                    className="project-overlay-text"
-                  >
-                    <ul>
-                      {currentProject.overlayDescription.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
+                  <div className="project-mobile-description-text">
+                    {currentProject.overlayDescription.map((item, idx) => (
+                      <p key={idx}>{item}</p>
+                    ))}
                   </div>
                 </div>
-              )}
-            </div>
+              </>
+            ) : (
+              <div className="project-image-wrapper">
+                <button
+                  onClick={() => handleOverlayToggle(currentProject.id)}
+                  className="project-overlay-btn"
+                  aria-label="Toggle overlay"
+                >
+                  <img src={assets.menu_icon} alt="Info" />
+                </button>
+
+                <img
+                  className={`project-image ${
+                    activeOverlay[currentProject.id]
+                      ? "project-hidden"
+                      : "project-visible"
+                  }`}
+                  src={currentProject.imageSrc}
+                  alt={currentProject.title}
+                />
+
+                <img
+                  className={`project-overlay-image ${
+                    activeOverlay[currentProject.id]
+                      ? "project-visible"
+                      : "project-hidden"
+                  }`}
+                  src={theme === "dark" ? "/Overlay_dark.png" : "/Overlay.png"}
+                  alt="Overlay"
+                />
+
+                {activeOverlay[currentProject.id] && (
+                  <div className="project-overlay-content">
+                    <h3
+                      ref={(el) =>
+                        (overlayTitleRefs.current[currentProject.id] = el)
+                      }
+                      className={`project-overlay-title ${
+                        currentProject.id !== 1
+                          ? "project-overlay-title-spaced"
+                          : ""
+                      }`}
+                    >
+                      {currentProject.overlayTitle}
+                    </h3>
+
+                    {currentProject.id === 1 && (
+                      <p
+                        ref={(el) =>
+                          (overlayTextRefs.current[
+                            `specialText${currentProject.id}`
+                          ] = el)
+                        }
+                        className="project-special-text"
+                      >
+                        The one you're currently viewing!
+                      </p>
+                    )}
+
+                    <div
+                      ref={(el) =>
+                        (overlayTextRefs.current[currentProject.id] = el)
+                      }
+                      className="project-overlay-text"
+                    >
+                      <ul>
+                        {currentProject.overlayDescription.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="project-tags">
               {currentProject.overlayTags.map((tag, i) => (
@@ -558,4 +580,4 @@ const Project = ({ theme }) => {
   );
 };
 
-export default Project; 
+export default Project;
