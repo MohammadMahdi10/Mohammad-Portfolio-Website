@@ -49,6 +49,8 @@
   color: black;
   text-decoration: none;
   transition: color 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 .ending-links a:hover {
@@ -191,6 +193,22 @@
   .ending-links {
     justify-content: center;
     gap: 0.85rem 1.25rem;
+  }
+
+  .ending-links a,
+  .ending-links a:visited,
+  .ending-links a:active,
+  .ending-links a:focus {
+    color: black;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .dark .ending-links a,
+  .dark .ending-links a:visited,
+  .dark .ending-links a:active,
+  .dark .ending-links a:focus {
+    color: white;
   }
 
   .ending-bottom {
