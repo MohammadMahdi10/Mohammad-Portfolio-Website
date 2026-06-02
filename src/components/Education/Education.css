@@ -219,7 +219,62 @@
   color: #e5e7eb;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .education-section {
+    padding-bottom: 5rem;
+  }
+
+  .education-title-line {
+    margin-bottom: 4rem;
+  }
+
+  .education-timeline-wrapper {
+    max-width: 42rem;
+  }
+
+  .education-year-header {
+    padding-left: 4.5rem;
+  }
+
+  .education-year-dot {
+    left: 2.5rem;
+  }
+
+  .education-cards {
+    width: 100%;
+    max-width: 34rem;
+    padding-left: 3.5rem;
+    padding-right: 1rem;
+    gap: 1.5rem;
+  }
+
+  .education-card {
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  .education-icon-box {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .education-icon-box-tall {
+    width: 2.3rem;
+    height: 3.7rem;
+  }
+
+  .education-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .education-description,
+  .education-description li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .education-section {
     padding-bottom: 6rem;
   }
