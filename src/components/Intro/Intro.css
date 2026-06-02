@@ -143,31 +143,47 @@
   }
 
   .intro-section {
-    min-height: calc(100vh - 4rem);
-    padding: 3rem 2rem;
+    min-height: calc(100vh - 5rem);
+    padding: 4rem 3rem;
   }
 
   .intro-content {
-    max-width: 46rem;
+    max-width: 65rem;
     margin-top: 0;
   }
 
+  .intro-text {
+    max-width: 60rem;
+  }
+
   .intro-heading {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
   }
 
   .intro-name {
-    font-size: clamp(3.5rem, 7vw, 4.5rem);
+    font-size: clamp(5.25rem, 9vw, 6.5rem);
+    margin-bottom: 2.25rem;
+    line-height: 1.05;
   }
 
   .intro-description {
-    font-size: 1.1rem;
-    max-width: 38rem;
+    font-size: 1.45rem;
+    line-height: 1.9;
+    max-width: 52rem;
+    margin: 0 auto 3rem;
   }
 
-  .intro-primary-btn {
-    font-size: 1rem;
-    padding: 1rem 1.8rem;
+  .intro-buttons {
+    gap: 1.5rem;
+  }
+
+  .intro-primary-btn,
+  .intro-secondary-btn {
+    font-size: 1.35rem;
+    font-weight: 700;
+    padding: 1.4rem 3rem;
+    border-radius: 16px;
   }
 }
 
