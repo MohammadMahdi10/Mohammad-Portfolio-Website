@@ -170,6 +170,68 @@
   box-shadow: 0 8px 20px rgba(96, 165, 250, 0.12);
 }
 
+/* TABLETS (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .about-section {
+    padding: 0 3rem;
+    scroll-margin-top: 6rem;
+  }
+
+  .about-container {
+    max-width: 60rem;
+    margin-bottom: 7rem;
+  }
+
+  .about-container h1 {
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-description {
+    font-size: 1.35rem;
+    line-height: 2.1;
+    max-width: 52rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-skills {
+    margin-top: 3rem;
+  }
+
+  .about-skills h2 {
+    font-size: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .skills-slider {
+    gap: 1.5rem;
+  }
+
+  .skill-group-wrapper {
+    min-width: 32rem;
+  }
+
+  .skill-group h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-list {
+    gap: 1rem;
+  }
+
+  .skill-item {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.4rem;
+  }
+
+  .skills-arrow {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-section {
     padding: 0 1.25rem;
