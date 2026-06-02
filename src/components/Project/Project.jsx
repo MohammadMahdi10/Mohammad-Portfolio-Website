@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import assets from "../../assets/assets";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaYoutube } from "react-icons/fa";
 import "./Project.css";
 
 const Project = ({ theme }) => {
@@ -226,6 +226,12 @@ const Project = ({ theme }) => {
     }));
   };
 
+  const openProjectLink = (url) => {
+    if (url) {
+      window.open(url, "_blank");
+    }
+  };
+
   const changeProject = (direction) => {
     if (!cardRef.current) return;
 
@@ -436,31 +442,31 @@ const Project = ({ theme }) => {
 
           <div ref={cardRef} className="project-card">
             <h2 className="project-title">
-              <span
-                className={`project-title-link ${
-                  !currentProject.youtube ? "project-disabled" : ""
-                }`}
-                onClick={() => {
-                  if (currentProject.youtube) {
-                    window.open(currentProject.youtube, "_blank");
-                  }
-                }}
-              >
-                {currentProject.title}
-              </span>
+              {isMobile ? (
+                <span className="project-title-link project-title-mobile">
+                  {currentProject.title}
+                </span>
+              ) : (
+                <span
+                  className={`project-title-link ${
+                    !currentProject.youtube ? "project-disabled" : ""
+                  }`}
+                  onClick={() => openProjectLink(currentProject.youtube)}
+                >
+                  {currentProject.title}
+                </span>
+              )}
 
-              <FaGithub
-                className={`project-github-icon ${
-                  theme === "dark"
-                    ? "project-github-dark"
-                    : "project-github-light"
-                } ${currentProject.gitHub ? "" : "project-disabled"}`}
-                onClick={() => {
-                  if (currentProject.gitHub) {
-                    window.open(currentProject.gitHub, "_blank");
-                  }
-                }}
-              />
+              {!isMobile && (
+                <FaGithub
+                  className={`project-github-icon ${
+                    theme === "dark"
+                      ? "project-github-dark"
+                      : "project-github-light"
+                  } ${currentProject.gitHub ? "" : "project-disabled"}`}
+                  onClick={() => openProjectLink(currentProject.gitHub)}
+                />
+              )}
             </h2>
 
             {isMobile ? (
@@ -481,6 +487,30 @@ const Project = ({ theme }) => {
                       <p key={idx}>{item}</p>
                     ))}
                   </div>
+
+                  {(currentProject.gitHub || currentProject.youtube) && (
+                    <div className="project-mobile-links">
+                      {currentProject.gitHub && (
+                        <button
+                          className="project-mobile-link-btn"
+                          onClick={() => openProjectLink(currentProject.gitHub)}
+                          aria-label="Open GitHub repository"
+                        >
+                          <FaGithub />
+                        </button>
+                      )}
+
+                      {currentProject.youtube && (
+                        <button
+                          className="project-mobile-link-btn"
+                          onClick={() => openProjectLink(currentProject.youtube)}
+                          aria-label="Open YouTube demo"
+                        >
+                          <FaYoutube />
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </>
             ) : (
