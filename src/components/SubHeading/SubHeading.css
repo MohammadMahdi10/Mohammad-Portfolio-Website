@@ -11,7 +11,14 @@
   color: #f3f4f6;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) and (max-width: 1023px) {
+  .subheading-title {
+    font-size: 2.75rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .subheading-title {
     font-size: 1.875rem;
   }

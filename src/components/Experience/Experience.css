@@ -222,54 +222,106 @@
   color: #e5e7eb;
 }
 
+/* TABLETS */
 @media (min-width: 768px) and (max-width: 1023px) {
   .experience-section {
-    padding-bottom: 5rem;
+    padding: 5rem 3rem 7rem;
+  }
+
+  .experience-title-container {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+  }
+
+  .experience-title {
+    font-size: 5.5rem;
+    margin-bottom: 1.75rem;
   }
 
   .experience-title-line {
-    margin-bottom: 4rem;
+    height: 0.4rem;
+    margin-bottom: 6rem;
   }
 
   .experience-timeline-wrapper {
-    max-width: 42rem;
-    margin-top: 4rem;
+    max-width: 64rem;
+    margin-top: 5.5rem;
+  }
+
+  .experience-year-block {
+    margin-bottom: 7rem;
   }
 
   .experience-year-header {
-    padding-left: 4.5rem;
+    padding-left: 5.5rem;
+    margin-bottom: 3.5rem;
   }
 
   .experience-year-dot {
-    left: 2.5rem;
+    left: 2.2rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-width: 5px;
+  }
+
+  .experience-year {
+    font-size: 2.4rem;
   }
 
   .experience-cards {
-    width: 100%;
-    max-width: 34rem;
-    padding-left: 3.5rem;
+    max-width: 52rem;
+    padding-left: 5.5rem;
     padding-right: 1rem;
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
 
   .experience-card {
-    flex-direction: column;
-    padding: 1.25rem;
+    padding: 2.5rem;
+    gap: 1.75rem;
+    border-radius: 1rem;
   }
 
   .experience-icon-box {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 1rem;
   }
 
   .experience-icon {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
-  .experience-description,
+  .experience-card-content h3 {
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+
+  .experience-date {
+    font-size: 1.3rem;
+    margin-top: 0.75rem;
+  }
+
+  .experience-description {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    margin-top: 1rem;
+  }
+
+  .experience-gained-title {
+    font-size: 1.4rem;
+    margin-top: 1.75rem;
+  }
+
+  .experience-bullets {
+    padding-left: 2rem;
+    margin-top: 0.75rem;
+  }
+
   .experience-bullets li {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
   }
 }
 
