@@ -11,8 +11,9 @@ const education = {
     {
       title: "Queen Mary University of London - MSci Computer Science",
       date: "September 2024 - June 2028",
-      description: [
-        "Going into my third year of my Computer Science degree and predicted First Class. Here are some of the modules I have completed:",
+      intro:
+        "Going into my third year of my Computer Science degree and predicted First Class.",
+      bullets: [
         "Software Engineering Project",
         "Algorithms & Data Structures",
         "Object Oriented Programming",
@@ -25,7 +26,7 @@ const education = {
     {
       title: "The Bridge Academy - A Levels",
       date: "September 2022 - June 2024",
-      description: ["Computer Science (A*)", "Mathematics (A*)", "Physics (A)"],
+      bullets: ["Computer Science (A*)", "Mathematics (A*)", "Physics (A)"],
       icon: AcademicCapIcon,
     },
   ],
@@ -127,54 +128,34 @@ const Education = () => {
             .map(([year, items]) => (
               <div key={year} className="education-year-block">
                 <div className="education-year-header">
-                  <div className="education-year-dot"></div>
+                  <div className="education-year-dot" />
                   <span className="education-year">{year}</span>
                 </div>
 
                 <div className="education-cards">
-                  {items.map((exp, index) => {
-                    const Icon = exp.icon;
+                  {items.map((item, index) => {
+                    const Icon = item.icon;
 
                     return (
                       <RevealCard key={index} delay={index * 0.05}>
                         <div className="education-card">
-                          <div
-                            className={`education-icon-box ${
-                              year === "2022" ? "education-icon-box-tall" : ""
-                            }`}
-                          >
+                          <div className="education-icon-box">
                             <Icon className="education-icon" />
                           </div>
 
                           <div className="education-card-content">
-                            <h3>{exp.title}</h3>
-                            <p className="education-date">{exp.date}</p>
+                            <h3>{item.title}</h3>
+                            <p className="education-date">{item.date}</p>
 
                             <div className="education-description">
-                              {Array.isArray(exp.description) ? (
-                                exp.description.every((item) => item.length <= 30) ? (
-                                  <ul>
-                                    {exp.description.map((item, idx) => (
-                                      <li key={idx}>{item}</li>
-                                    ))}
-                                  </ul>
-                                ) : (
-                                  <>
-                                    {exp.description.length > 0 && (
-                                      <p>{exp.description[0]}</p>
-                                    )}
+                              {item.intro && <p>{item.intro}</p>}
 
-                                    {exp.description.length > 1 && (
-                                      <ul>
-                                        {exp.description.slice(1).map((item, idx) => (
-                                          <li key={idx}>{item}</li>
-                                        ))}
-                                      </ul>
-                                    )}
-                                  </>
-                                )
-                              ) : (
-                                exp.description
+                              {item.bullets && (
+                                <ul>
+                                  {item.bullets.map((point, idx) => (
+                                    <li key={idx}>{point}</li>
+                                  ))}
+                                </ul>
                               )}
                             </div>
                           </div>

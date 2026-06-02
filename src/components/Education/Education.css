@@ -219,58 +219,106 @@
   color: #e5e7eb;
 }
 
+/* TABLETS - SAME SCALE AS EXPERIENCE */
 @media (min-width: 768px) and (max-width: 1023px) {
   .education-section {
-    padding-bottom: 5rem;
+    padding: 5rem 3rem 7rem;
+  }
+
+  .education-title-container {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+  }
+
+  .education-title {
+    font-size: 5.5rem;
+    margin-bottom: 1.75rem;
   }
 
   .education-title-line {
-    margin-bottom: 4rem;
+    height: 0.4rem;
+    margin-bottom: 6rem;
   }
 
   .education-timeline-wrapper {
-    max-width: 42rem;
+    max-width: 64rem;
+  }
+
+  .education-year-block {
+    margin-bottom: 7rem;
   }
 
   .education-year-header {
-    padding-left: 4.5rem;
+    padding-left: 6.5rem;
+    margin-bottom: 3.5rem;
   }
 
   .education-year-dot {
-    left: 2.5rem;
+    left: 2.2rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-width: 5px;
   }
 
+  .education-year {
+    font-size: 2.4rem;
+  }
+
+
   .education-cards {
-    width: 100%;
-    max-width: 34rem;
-    padding-left: 3.5rem;
+    max-width: 52rem;
+    padding-left: 5.5rem;
     padding-right: 1rem;
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
 
   .education-card {
-    flex-direction: column;
-    padding: 1.25rem;
+    padding: 2.5rem;
+    gap: 1.75rem;
+    border-radius: 1rem;
   }
 
   .education-icon-box {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 1rem;
   }
 
   .education-icon-box-tall {
-    width: 2.3rem;
-    height: 3.7rem;
+    width: 3.5rem;
+    height: 5.75rem;
   }
 
   .education-icon {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
-  .education-description,
+  .education-card-content h3 {
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+
+  .education-date {
+    font-size: 1.3rem;
+    margin-top: 0.75rem;
+  }
+
+  .education-description {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    margin-top: 1rem;
+  }
+
+  .education-description ul {
+    margin-left: 1.25rem;
+    margin-top: 0.75rem;
+  }
+
   .education-description li {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
   }
 }
 
