@@ -98,6 +98,12 @@
 .menu-icon {
   width: 2rem;
   cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.menu-icon-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .dark .navbar {
@@ -161,14 +167,14 @@
   .navbar-links {
     position: fixed;
     top: 0;
-    bottom: 0;
     right: 0;
+    bottom: 0;
     left: auto;
     transform: none;
 
-    min-height: 100vh;
-    height: 100%;
     width: 0;
+    min-height: 100vh;
+    height: 100vh;
 
     overflow: hidden;
 
@@ -181,12 +187,24 @@
     padding-top: 5rem;
 
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
-    transition: all 0.5s ease-in-out;
+    transition:
+      width 0.5s ease-in-out,
+      padding-left 0.5s ease-in-out;
+
+    z-index: 999;
   }
 
   .navbar-links.sidebar-open {
     width: 12.5rem;
     padding-left: 1.5rem;
+  }
+
+  .navbar-actions {
+    z-index: 10;
+  }
+
+  .navbar-links.sidebar-open ~ .navbar-actions {
+    pointer-events: none;
   }
 
   .sidebar-close {
@@ -197,6 +215,9 @@
     right: 1rem;
     top: 1rem;
     cursor: pointer;
+    z-index: 1000;
+    color: white;
+    pointer-events: auto;
   }
 
   .navbar-link {

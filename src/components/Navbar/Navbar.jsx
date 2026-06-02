@@ -52,7 +52,7 @@ const Navbar = ({ theme, setTheme }) => {
           src={theme === "dark" ? assets.menu_icon_dark : assets.menu_icon}
           alt="Open menu"
           onClick={() => setSidebarOpen(true)}
-          className="menu-icon"
+          className={`menu-icon ${sidebarOpen ? "menu-icon-hidden" : ""}`}
         />
       </div>
     </div>
