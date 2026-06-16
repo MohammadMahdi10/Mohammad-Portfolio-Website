@@ -127,7 +127,7 @@ const Project = ({ theme }) => {
         "Software Lifecycle (Agile)",
       ],
       youtube: "https://www.youtube.com/watch?v=hfcUo_NBVt8",
-      gitHub: "",
+      gitHub: "https://github.com/MohammadMahdi10/Cosmic-Showdown",
     },
     {
       id: 4,
